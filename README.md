@@ -1,6 +1,6 @@
 # fanKounter
 
-##Descrizione
+## Descrizione
 fanKounter è uno script in PHP gratuito, distribuito sotto licenza GNU AGPL, per creare e gestire una quantità indefinita di contatori (grafici, testuali o invisibili) di accessi alle pagine WEB.
 Ogni contatore tiene traccia dei visitatori e fornisce completi report statistici, tra cui referrer di provenienza, compresi i motori di ricerca e le parole chiave usate per trovare il sito.
 Non necessita di database ma memorizza i dati in file in maniera efficace ed occupando poco spazio fisico.
