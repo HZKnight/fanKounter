@@ -17,3 +17,12 @@ La creazione di una nuova istanza di contatore può avvenire in modo automatico,
 - Convalida di chiamata ed esclusione di IP
 - Report statistici completi sui visitatori
 - Pruning automatico dei file di dati
+
+## Requisiti
+Il fanKounter non ha bisogno di requisiti HW/SW specifici.
+- PHP: 
+  - 5.5.0 e successive
+  - 7.0.1 Testato
+- Libreria GD come estensione al PHP: opzionale, o versione 2.0 e successive
+- Host server - Sistema operativo e server HTTP: qualunque
+- Utente - Sistema operativo e browser: qualunque
