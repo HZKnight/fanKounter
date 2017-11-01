@@ -1,0 +1,218 @@
+
+                                        __                      PHP Script    _    vs 5.0
+                                       / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
+                                      | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
+                                      |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
+                                      |_|  \__,_|_| |_\/  \/\___/ \__,_|_| |_|\__\___|_|
+
+ ******************************************************************************************
+ history.txt                                  lucliscio <lucliscio@h0model.org>, ITALY
+ ******************************************************************************************
+ 
+ 01 nov 2017
+ versione 5.0
+ ============
+ fanKounter:
+ - è stato publicato su github 
+ - è rilasciato sotto licenza GNU AFERO GENERAL PUBLIC LICENSE v3
+ - il suo sviluppo è ora curato da lucliscio.
+
+ NOTA PER L'AGGIORNAMENTO
+ ------------------------
+ - sono stati corretti tutti i problemi che impedivano al contatore di funzionare von versioni 
+   di PHP superiori alle 5.3
+ - Tutti i testi sono stati convertiti in utf-8
+ - E'stato aggiunto al motore di rilevamento il supporto ai nuovi browser e os 
+	
+ 
+
+ 28 feb 2008
+ versione 5.0
+ ============
+ fanKounter è rilasciato sotto licenza GNU GENERAL PUBLIC LICENSE v3.
+
+ NOTA PER L'AGGIORNAMENTO
+ ------------------------
+ Niente da fare. Nessun file di codice è cambiato.
+
+
+
+ 02 nov 2004
+ versione 5.0
+ ============
+ Rilasciata la nuova versione del fanKounter, completamente riscritto e migliorato in tutte
+ le sue componenti, anche se le caratteristiche finali restano pressoché le stesse.
+
+ Le novità principali:
+ > i calcoli statistici ora vengono eseguiti e memorizzati direttamente dal contatore e il
+   visualizzatore si limita a leggere questi dati dai file;
+ > il contatore ora dispone di tre modalità: grafico, testo, nascosto;
+ > sul contatore grafico ora appaiono sia gli accessi totali che quelli giornalieri;
+ > è stato implementato il monitoraggio dei provider;
+ > il visualizzatore delle statistiche è stato completamente modificato;
+ > le statistiche sono state ripartite in gruppi mediante utilizzo di pannelli, in modo da
+   rendere la consultazione dei dati veloce e mirata;
+ > la visualizzazione delle statistiche ora può essere protetta da password.
+
+ NOTA PER L'AGGIORNAMENTO
+ ------------------------
+ Questa versione non è direttamente compatibile con le versioni precedenti.
+ * Per convertire i contatori dalla versione 4 alla versione 5, è possibile utilizzare il
+   tool 'db4to5' posto nella cartella 'tool'.
+ * Il fanKounter 5 non può invece gestire contatori creati da versioni del fanKounter 3 e
+   precedenti.
+
+
+
+ 19 ott 2004
+ versione 4.1
+ ============
+ > Aggiunto un supporto di accesso protetto da password alle statistiche.
+ > Disattivata per default la rilevazione statistica degli Stati.
+ > Rimosse le chiavi duplicate dalle query dei motori di ricerca.
+ > Le copie di backup ora possono essere spedite anche al proprio indirizzo email, anziché
+   essere salvate sul server.
+ > Corretto un bug sul tempo di scadenza di una visita relativo al supporto 'file-access'.
+ > Ridefinite le funzioni 'array_fill' e 'file_get_contents' per compatibilità con versioni
+   più vecchie di PHP ed usate nel modulo 'stats.inc.php'.
+ > Aggiunta una verifica sull'esistenza del supporto 'bzip2' prima di procedere all'uso
+   della funzione 'gzcompress' per la costruzione di un archivio ZIP.
+ > Corretto un problema nel modulo 'counter.js.php' che in determinate situazioni, dentro
+   pagine WEB con frames, poteva generare un errore di protezione.
+ > Modificata l'immagine di base default per il contatore.
+ > Rivisitati in modo non significativo ai fini del corretto funzionamento alcuni file
+   inclusi nella distribuzione.
+
+
+
+ 16 dic 2003
+ versione 4.0
+ ============
+ Rilasciata la nuova versione del fanKounter, completamente riscritto e migliorato in tutte
+ le sue componenti. Sono state aggiunte, inoltre, molte nuove caratteristiche, alcune delle
+ quali basate sui suggerimenti pervenuti.
+
+ Le novità principali:
+ > è stata data maggiore flessibilità alla configurazione dell'intero script, anche a
+   favore di una maggiore compatibiltà verso i diversi sistemi su cui deve girare;
+ > è stato aggiunto un supporto per istanziare in modo automatico un contatore;
+ > è stato implementato il monitoraggio di referrers e motori di ricerca, che include il
+   riconoscimento delle parole chiave usate da questi ultimi;
+ > la rilevazione di un report è stata impostata a livello di visitatore e non di visita
+   ed è programmabile a proprio piacimento;
+ > è stato aggiunto un supporto per il backup automatico dei dati di un contatore;
+ > è cambiata la licenza di questo software che ora è più rigorosa.
+
+
+
+ 31 ott 2003
+ versione 3.6
+ ============
+ > Corretto grosso bug ~del giorno 31~ nel modulo "stats.php", che causava perdite nei
+   reports mensili, anche permanenti se nei giorni in questione avveniva un'archiviazione.
+
+
+
+ 18 ott 2003
+ versione 3.5
+ ============
+ > Revisione generale dello script e dei file inclusi nella distribuzione.
+ > Modificato integralmente il template standard del modulo delle statistiche.
+
+
+
+ 27 ago 2003
+ versione 3.4
+ ============
+ > A causa di frequenti bugs presenti in alcune versioni di PHP, che non tollerano l'uso
+   del carattere "@" ad esempio all'interno del comando "copy()", sono stati modificati i
+   nomi di molti file inclusi nella distribuzione, dei file di configurazione e dei file
+   dei dati creati per i contatori. Sostanzialmente, è stato sostituito il carattere "@"
+   con il carattere "-", in ogni sua occorrenza all'interno dei nomi dei file.
+
+
+
+ 24 apr 2003
+ versione 3.3
+ ============
+ > Aggiunta la variabile "$admin_htime" nella configurazione di un contatore che consente
+   di settare il giusto tempo locale rispetto al server in cui risiede lo script.
+ > Aggiunto un sistema automatico di avviso sugli aggiornamenti dello script, nella pagina
+   delle statistiche.
+ > Revisionati altri file inclusi nella distribuzione.
+
+
+
+ 10 apr 2003
+ versione 3.2
+ ============
+ > Inserito un selettore rapido nella pagina delle statistiche per accedere velocemente ai
+   report statistici degli altri contatori.
+ > Aggiunta la variabile "$restrict_view" nella configurazione di un contatore che consente
+   di limitare il numero di voci da stampare nei reports per alcune tabelle che potrebbero
+   avere un numero elevato di righe.
+ > Revisionati in modo non significativo ai fini del corretto funzionamento molti file
+   inclusi nella distribuzione.
+
+
+
+ 06 apr 2003
+ versione 3.1
+ ============
+ > Apportate piccole revisioni al modulo delle statistiche non significative ai fini del
+   corretto funzionamento dello script.
+ > Apportate piccole revisioni al modulo motore per fornire maggiore robustezza nella
+   memorizzazione dei reports.
+ > Revisionati altri file inclusi nella distribuzione compreso il "readme.txt".
+
+
+
+ 24 gen 2003
+ versione 3.0
+ ============
+ > Aggiunta la modalità nascosta (hidden) per il contatore.
+ > Aggiunta la modalità test (test) per fornire un supporto di debug e rilevare facilmente
+   problemi nell'installazione di un nuovo contatore.
+ > Rimossa la modalità solo testo (text) per il contatore.
+ > Aggiunta la variabile "$pad_char" nella configurazione del contatore che permette di
+   scegliere il carattere di riempimento per le cifre vuote nella stampa del numero di
+   visite.
+ > Aggiunta la variabile "$ignore_ip" nella configurazione del contatore che permette di
+   escludere dalle operazioni eseguite dello script chiamate fatte da alcuni IP.
+ > Aggiunta la variabile "$unique_mtime" nella configurazione del contatore che permette di
+   escludere dalle statistice le impressions non ritenute accessi unici.
+ > Modificato il dominio della variabile "$align_box" che ora può assumere anche valori
+   numerici ("H" => offsetX, "V" => offsetY).
+ > Modificato integralmente il modulo dei report statistici (stats.php) che ora visualizza
+   statistiche complete ed elaborate sugli accessi e sui visitatori ed è inoltre dotato di
+   un efficiente sistema per archiviare periodicamente i reports alleggerendo così la fase
+   di calcolo e riducendo in maniera significativa lo spazio fisico occupato.
+
+
+
+ 18 ott 2002
+ versione 2.1
+ ============
+ > Migliorata la modalità di visualizzazione per il contatore solo testo.
+
+
+
+ 16 ott 2002
+ versione 2.0
+ ============
+ > Aggiunto supporto per gestire multiple istanze di contatori.
+ > Aggiunto supporto per diversi tipi di file/immagine: GIP, JPG, PNG, BMP.
+ > Aggiunta la possibilità di inserire il contatore dentro l'immagine in 9 posizioni
+   diverse.
+ > Aggiunta l'opzione per impostare il testo del contatore in 5 grandezze differenti.
+ > Aggiunta l'opzione per rendere il box del contatore trasparente.
+
+
+
+ 10 ott 2002
+ versione 1.0
+ ============
+ Rilasciata la prima versione di fanKounter, script in PHP per creare e gestire un
+ contatore di visite per pagine WEB. Caratteristiche: doppia modalità di visualizzazione,
+ grafica e testuale; personalizzabile nel layout, nell'immagine di sfondo e nel colore del
+ contatore; memorizzazione di semplici reports statistici sui visitatori.

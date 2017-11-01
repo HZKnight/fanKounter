@@ -1,0 +1,422 @@
+      /* stats.css
+                                        __                      PHP Script    _    vs 5.0
+                                       / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
+                                      | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
+                                      |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
+                                      |_|  \__,_|_| |_\/  \/\___/ \__,_|_| |_|\__\___|_|
+
+                                              fanatiko <fankounter@libero.it>, ITALY
+ Documentazione di riferimento
+############################################################################################
+ license.txt - le condizioni di utilizzo, modifica e redistribuzione per l'utente finale
+  manual.txt - la guida alla configurazione, all'installazione e all'uso dello script
+    faqs.txt - le risposte alle domande più comuni, sui problemi e sulle funzionalità
+ history.txt - la progressione delle versioni, i miglioramenti apportati e i bugs eliminati
+
+ Descrizione del file
+############################################################################################
+ Foglio di stile per il visualizzatore di statistiche.
+
+      */
+
+/*********
+ GENERICI
+**********/
+
+body {
+ margin: 0px;
+ padding: 40px 0px;
+ background-color: rgb(245,245,245);
+ scrollbar-arrow-color: rgb(255,128,0);
+ scrollbar-darkshadow-color: rgb(150,170,175);
+ scrollbar-face-color: rgb(220,225,230);
+ scrollbar-highlight-color: rgb(255,255,255);
+ scrollbar-shadow-color: rgb(220,225,230);
+ scrollbar-track-color: rgb(240,240,240);
+ scrollbar-3dlight-color: rgb(210,215,220);
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+ background-color: trasparent;
+ color: rgb(80,80,200);
+ text-decoration: none;
+}
+
+a:hover {
+ background-color: trasparent;
+ color: rgb(220,220,220);
+ text-decoration: none;
+}
+
+p,
+form {
+ margin: 0px;
+}
+
+/********************
+ MASCHERA DI ACCESSO
+*********************/
+
+div.mask {
+ width: 240px;
+ height: auto;
+ border: 3px rgb(255,128,0) solid;
+ padding: 20px 5px;
+ background-color: rgb(255,255,255);
+ font-family: Verdana;
+ font-size: 11px;
+ color: rgb(0,0,20);
+}
+
+select.counter {
+ width: 150px;
+ height: auto;
+ margin: 3px auto 20px auto;
+ background-color: trasparent;
+ font-family: Verdana;
+ font-size: 11px;
+ color: rgb(0,0,20);
+}
+
+input.passwd {
+ width: 150px;
+ height: auto;
+ margin: 3px auto 20px auto;
+ border: 1px rgb(0,0,20) solid;
+ background-color: rgb(245,245,245);
+ font-family: Verdana;
+ font-size: 11px;
+ color: rgb(0,0,20);
+}
+
+input.enter {
+ border: 0px rgb(255,255,255) solid;
+ background-color: rgb(255,255,255);
+ font-family: Verdana;
+ font-size: 10px;
+ color: rgb(0,0,20);
+ cursor: hand;
+}
+
+/*************************
+ CONTENITORI DEI PANNELLI
+**************************/
+
+table.conteiner {
+ width: 740px;
+ height: auto;
+ table-layout: fixed;
+}
+
+td.conteiner {
+ border: 3px rgb(255,128,0) solid;
+ padding: 30px;
+ background-color: rgb(255,255,255);
+}
+
+/*******************
+ PULSANTI DEL MENU'
+********************/
+
+input.menu {
+ width: auto;
+ height: auto;
+ margin: 0px 0px 1px 1px;
+ border: 1px rgb(40,60,80) solid;
+ background-color: rgb(40,60,80);
+ font-family: Verdana;
+ font-size: 10px;
+ color: rgb(230,230,230);
+ cursor: hand;
+}
+
+input.menu_up {
+ width: auto;
+ height: 26px;
+ margin: 0px 0px 1px 1px;
+ border: 1px rgb(40,60,80) solid;
+ background-color: rgb(40,60,80);
+ font-family: Verdana;
+ font-size: 10px;
+ color: rgb(255,255,255);
+ cursor: hand;
+}
+
+input.menuq {
+ width: auto;
+ height: auto;
+ margin: 0px 0px 1px 1px;
+ border: 1px rgb(190,0,0) solid;
+ background-color: rgb(190,0,0);
+ font-family: Verdana;
+ font-size: 10px;
+ color: rgb(230,230,230);
+ cursor: hand;
+}
+
+input.menuq_up {
+ width: auto;
+ height: 26px;
+ margin: 0px 0px 1px 1px;
+ border: 1px rgb(190,0,0) solid;
+ background-color: rgb(190,0,0);
+ font-family: Verdana;
+ font-size: 10px;
+ color: rgb(255,255,255);
+ cursor: hand;
+}
+
+input.menu_hi {
+ width: auto;
+ height: 26px;
+ margin: 1px 0px 0px 1px;
+ border-top: 1px rgb(230,100,0) solid;
+ border-right: 1px rgb(230,100,0) solid;
+ border-bottom: 1px rgb(255,128,0) solid;
+ border-left: 1px rgb(230,100,0) solid;
+ background-color: rgb(255,128,0);
+ font-family: Verdana;
+ font-size: 10px;
+ color: rgb(0,0,20);
+ cursor: hand;
+}
+
+/********
+ CREDITS
+*********/
+
+p.credits {
+ padding: 1px;
+ background-color: trasparent;
+ font-family: Arial;
+ font-size: 10px;
+ color: rgb(0,0,20);
+}
+
+p.credits a,
+p.credits a:link,
+p.credits a:active,
+p.credits a:visited {
+ background-color: trasparent;
+ color: rgb(0,0,20);
+ text-decoration: none;
+}
+
+p.credits a:hover {
+ background-color: trasparent;
+ color: rgb(0,0,20);
+ text-decoration: underline;
+}
+
+/*************
+ INTESTAZIONE
+**************/
+
+p.header {
+ margin: 0px auto 30px auto;
+ background-color: trasparent;
+ font-family: Arial;
+ font-size: 14px;
+ color: rgb(0,0,20);
+ text-align: center;
+}
+
+p.header span.hi {
+ padding: 0px 2px;
+ color: rgb(50,100,140);
+}
+
+p.header span.count {
+ padding: 0px 2px;
+ color: rgb(180,40,40);
+}
+
+/****
+ TOP
+*****/
+
+p.top {
+ margin: 30px auto 0px auto;
+ background-color: trasparent;
+ font-family: Arial;
+ font-size: 9px;
+ color: rgb(0,0,20);
+ text-align: right;
+}
+
+p.top a,
+p.top a:link,
+p.top a:active,
+p.top a:visited {
+ background-color: trasparent;
+ color: rgb(0,0,20);
+ text-decoration: none;
+}
+
+p.top a:hover {
+ background-color: trasparent;
+ color: rgb(0,0,20);
+ text-decoration: underline;
+}
+
+/*******
+ TITOLI
+********/
+
+p.title {
+ margin: 20px auto 0px auto;
+ border-bottom: 2px rgb(255,128,0) solid;
+ border-left: 10px rgb(255,128,0) solid;
+ padding: 1px 10px;
+ background-color: rgb(245,245,245);
+ font-family: Verdana;
+ font-size: 17px;
+ color: rgb(60,60,80);
+}
+
+p.title span.hi {
+ padding: 0px 2px;
+ color: rgb(50,100,140);
+}
+
+p.title span.count {
+ padding: 0px 2px;
+ color: rgb(180,40,40);
+}
+
+/*********
+ SOMMARIO
+**********/
+
+p.summary {
+ margin: 8px 0px;
+ border-bottom: 1px rgb(245,245,245) solid;
+ padding: 0px 0px 0px 20px;
+ background-color: trasparent;
+ font-family: Verdana;
+ font-size: 12px;
+ color: rgb(0,0,20);
+}
+
+p.summary span.hi {
+ color: rgb(50,100,140);
+}
+
+p.summary span.count {
+ padding: 0px 2px;
+ color: rgb(180,40,40);
+}
+
+/***************
+ ULTIMI ACCESSI
+****************/
+
+table.entry {
+ width: 100%;
+ height: auto;
+ margin: 20px auto;
+ border-top: 1px rgb(245,245,245) solid;
+ table-layout: fixed;
+}
+
+table.entry td.header {
+ border-bottom: 1px rgb(245,245,245) solid;
+ border-left: 1px rgb(255,255,255) solid;
+ padding: 2px 3px;
+ background-color: rgb(235,235,235);
+ font-family: Verdana;
+ font-size: 11px;
+ color: rgb(40,40,60);
+ text-align: right;
+}
+
+table.entry td.date,
+table.entry td.country,
+table.entry td.ip,
+table.entry td.browser,
+table.entry td.os {
+ border-bottom: 1px rgb(245,245,245) solid;
+ padding: 1px 3px;
+ background-color: trasparent;
+ font-family: "Courier New";
+ font-size: 12px;
+ color: rgb(0,0,20);
+ text-align: right;
+}
+
+table.entry td.entry,
+table.entry td.location,
+table.entry td.referrer {
+ border-bottom: 1px rgb(245,245,245) solid;
+ padding: 1px 3px;
+ background-color: trasparent;
+ font-family: "Courier New";
+ font-size: 12px;
+ color: rgb(0,0,20);
+}
+
+/********
+ GRAFICI 
+*********/
+
+table.graph {
+ width: 100%;
+ height: auto;
+ margin: 20px auto;
+ table-layout: fixed;
+}
+
+table.graph td.header {
+ border-bottom: 1px rgb(245,245,245) solid;
+ border-left: 1px rgb(255,255,255) solid;
+ padding: 2px 3px;
+ background-color: rgb(235,235,235);
+ font-family: Verdana;
+ font-size: 11px;
+ color: rgb(40,40,60);
+}
+
+table.graph td.item,
+table.graph td.chart,
+table.graph td.percentage {
+ border-bottom: 1px rgb(245,245,245) solid;
+ padding: 1px 3px;
+ background-color: trasparent;
+ font-family: "Courier New";
+ font-size: 12px;
+ color: rgb(0,0,20);
+}
+
+table.graph * td.bar {
+ width: auto;
+ height: auto;
+ border-top: 5px rgb(255,255,255) solid;
+ border-bottom: 3px rgb(255,255,255) solid;
+ background-color: rgb(200,0,0);
+}
+
+table.graph * td.hits {
+ width: auto;
+ height: auto;
+ padding: 0px 3px;
+ background-color: trasparent;
+ font-family: "Courier New";
+ font-size: 11px;
+ color: rgb(0,0,20);
+}
+
+/******
+ ALTRO
+*******/
+
+span.unknown,
+span.other {
+ font-style: italic;
+}
+
+span.sunday {
+ color: rgb(190,0,0);
+}
