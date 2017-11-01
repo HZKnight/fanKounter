@@ -24,5 +24,5 @@
    history.txt   La progressione delle versioni, i miglioramenti apportati, i bugs
                  eliminati e la modalità di aggiornamento.
 
- Se desideri contattare l'autore, scrivi a: Francesco <fankounter@libero.it>.
- Il sito ufficiale del fanKounter è: http://profitterol.altervista.org/fankounter.
+ Se desideri contattare l'autore, scrivi a: lucliscio <lucliscio@h0model.org>.
+ Il nuovo sito ufficiale del fanKounter è: https://lucliscio.github.io/fanKounter/.
