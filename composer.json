@@ -1,7 +1,7 @@
 {
     "name": "lucliscio/fankounter",
     "type": "application",
-    "description": "Statistic Engine",
+    "description": "It's a free PHP counter originally developed by FanatiKo ",
     "keywords": ["Statistic","hit counter"],
     "homepage": "https://github.com/lucliscio/fanKounter",
     "license": "AGPL",
