@@ -1,0 +1,24 @@
+{
+    "name": "lucliscio/fanKounter",
+    "type": "application",
+    "description": "Statistic Engine",
+    "keywords": ["Statistic","hit counter"],
+    "homepage": "https://github.com/lucliscio/fanKounter",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Luca Liscio",
+            "email": "lucliscio@h0model.org",
+            "homepage": "http://lucliscio.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "fanKounter": "src"
+        }
+    }
+}
