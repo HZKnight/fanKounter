@@ -1,5 +1,5 @@
 {
-    "name": "lucliscio/fanKounter",
+    "name": "lucliscio/fankounter",
     "type": "application",
     "description": "Statistic Engine",
     "keywords": ["Statistic","hit counter"],
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "fanKounter": "src"
+            "fankounter": "src"
         }
     }
 }
