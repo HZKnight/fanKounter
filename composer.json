@@ -1,0 +1,25 @@
+{
+    "name": "lucliscio/fankounter",
+    "type": "application",
+    "description": "It's a free PHP counter originally developed by FanatiKo ",
+    "version": "5.0.10",
+    "keywords": ["Statistic","hit counter"],
+    "homepage": "https://github.com/lucliscio/fanKounter",
+    "license": "GNU AGPL",    
+    "authors": [
+        {
+            "name": "Luca Liscio",
+            "email": "lucliscio@h0model.org",
+            "homepage": "http://lucliscio.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "fankounter": "src"
+        }
+    }
+}

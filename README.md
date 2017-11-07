@@ -1,4 +1,5 @@
 # fanKounter
+[![License](https://poser.pugx.org/lucliscio/fankounter/license)](https://packagist.org/packages/lucliscio/fankounter)
 
 ## Descrizione
 fanKounter è uno script in PHP gratuito, distribuito sotto licenza GNU AGPL, per creare e gestire una quantità indefinita di contatori (grafici, testuali o invisibili) di accessi alle pagine WEB.
