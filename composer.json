@@ -24,5 +24,11 @@
 			"fankounter" : "src"
 		}
 	},
-	"minimum-stability" : "beta"
+	"minimum-stability" : "beta",
+	"support" : {
+		"email" : "lucliscio@h0model.org",
+		"issues" : "https://github.com/lucliscio/fanKounter/issues",
+		"wiki" : "https://github.com/lucliscio/fanKounter/wiki",
+		"source" : "https://github.com/lucliscio/fanKounter"
+	}
 }
