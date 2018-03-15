@@ -2,10 +2,14 @@
 	"name" : "lucliscio/fankounter",
 	"type" : "application",
 	"description" : "It's a free PHP counter originally developed by FanatiKo ",
-	"version" : "5.0.10",
+	"version" : "5.0.11",
 	"keywords" : [
-		"Statistic",
-		"hit counter"
+		"hit counter",
+		"php",
+		"statistic",
+		"counter",
+		"visitors counter",
+		"cross plattafor"
 	],
 	"homepage" : "https://github.com/lucliscio/fanKounter",
 	"license" : "GNU AGPL-3.0+",

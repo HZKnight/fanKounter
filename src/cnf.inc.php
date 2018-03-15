@@ -112,9 +112,9 @@ define("FLOCK_FILES", "lock_*.tmp");
 # CREDITS
 ############################################################################################
 
-define("HOMEPAGE", "http://profitterol.altervista.org/fankounter");
-define("EMAIL", "fankounter@libero.it");
-define("VERSION", "5.0.80228");
+define("HOMEPAGE", "https://lucliscio.github.io/fanKounter");
+define("EMAIL", "lucliscio@h0model.org");
+define("VERSION", "5.0.11");
 
 ############################################################################################
 # CONFIGURAZIONE DEFAULT PER UN CONTATORE

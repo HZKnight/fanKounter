@@ -77,11 +77,11 @@ $par__mode=(($par__mode==="graphic")&&(!extension_loaded("gd")))?"text":$par__mo
 ############################################################################################
 
 if(defined("SCRIPT_PATH"))
- $aux__script_path=SCRIPT_PATH;
+    $aux__script_path=SCRIPT_PATH;
 elseif(array_key_exists("HTTP_HOST",$_SERVER)&&array_key_exists("SERVER_PORT",$_SERVER)&&array_key_exists("PHP_SELF",$_SERVER))
- $aux__script_path="http://".$_SERVER["HTTP_HOST"].(($_SERVER["SERVER_PORT"]==="80")?"":(":".$_SERVER["SERVER_PORT"])).preg_replace("/".preg_quote(basename($_SERVER["PHP_SELF"]),"/")."$/","",$_SERVER["PHP_SELF"]);
+    $aux__script_path="http://".$_SERVER["HTTP_HOST"].(($_SERVER["SERVER_PORT"]==="80")?"":(":".$_SERVER["SERVER_PORT"])).preg_replace("/".preg_quote(basename($_SERVER["PHP_SELF"]),"/")."$/","",$_SERVER["PHP_SELF"]);
 else
- $aux__script_path=FALSE;
+    $aux__script_path=FALSE;
 
 $aux__counter_href=$aux__script_path."counter.php"."?id=".$par__id."&mode=".$par__mode."&referrer='+escape(_referrer)+'";
 $aux__stats_href=$aux__script_path."stats.php"."?id=".$par__id;
