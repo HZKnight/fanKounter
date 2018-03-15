@@ -32,4 +32,4 @@ Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - Utente - Sistema operativo e browser: qualunque
 
 ## Ringraziamenti speciali
-Fanatiko
+FanatiKo
