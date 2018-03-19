@@ -1,4 +1,4 @@
-![#fasnKounter](/fk_nover.png)
+![#fasnKounter](/src/img/fk_newlogo.png)
 
 [![release](http://github-release-version.herokuapp.com/github/lucliscio/fanKounter/release.svg?style=flat)](https://github.com/lucliscio/fanKounter/releases/latest)
 [![License](https://poser.pugx.org/lucliscio/fankounter/license)](https://packagist.org/packages/lucliscio/fankounter)
@@ -33,4 +33,5 @@ Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - Utente - Sistema operativo e browser: qualunque
 
 ## Ringraziamenti speciali
-FanatiKo
+### FanatiKo
+Ideatore e sviluppatore originale di fanKounter 
