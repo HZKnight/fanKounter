@@ -50,6 +50,12 @@
  */
 
 ############################################################################################
+# INCLUSIONE DELLE LIBRERIE
+############################################################################################
+
+require("libs/rain.tpl.class.php");
+
+############################################################################################
 # INCLUSIONE DEI MODULI
 ############################################################################################
 
@@ -59,6 +65,14 @@ require("cnf.inc.php");
 require("dic.inc.php");
 require("cal.inc.php");
 require("lan.inc.php");
+
+############################################################################################
+# INIZIALIZZAZIONE DELLE LIBRERIE
+############################################################################################
+
+RainTPL::$tpl_dir = "template/fanKounter_classic/";
+RainTPL::$cache_dir = "temp/tpl/";
+$view = new RainTPL();
 
 ############################################################################################
 # PARAMETRI IN INPUT
@@ -73,10 +87,11 @@ $par__panel=(isset($par__panel)&&preg_match("/^(0|1|2|3|4|5)+$/",$par__panel))?(
 ############################################################################################
 
 if($par__id!==FALSE&&file_exists(CONFIG_FOLDER._filename_(CONFIG_FILES,$par__id))){
- require(CONFIG_FOLDER._filename_(CONFIG_FILES,$par__id));
+    require(CONFIG_FOLDER._filename_(CONFIG_FILES,$par__id));
 }
-else
- $par__id=FALSE;
+else {
+    $par__id=FALSE;
+}
 
 settype($cnf__userpass,"string");
 settype($cnf__mtime_unique_accs,"integer");
@@ -92,54 +107,30 @@ settype($cnf__limit_view,"integer");
 ############################################################################################
 
 if(($par__id===FALSE)||($cnf__passwd_protect&&(md5($par__passwd)!==$cnf__userpass))){
- setcookie("passwd","");
-
- echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">";
- echo EOL.EOL;
- echo"<!-- fanKounter v".VERSION." - by fanatiko (Italy) //-->";
- echo EOL;
- echo"<!-- ".HOMEPAGE." //-->";
- echo EOL;
- echo"<!-- mailto:".EMAIL." //-->";
- echo EOL.EOL;
- echo"<html>";
- echo"<head>";
- echo"<title>"._strlan_(LAN_TITLE1,TRUE)."</title>";
- echo"<meta name=\"description\" content=\"fanKounter: uno script in PHP per creare e gestire contatori di visite con statistiche per pagine WEB.\" />";
- echo"<meta name=\"keywords\" content=\"accessi,contatore,counter,fanKounter,pagine,PHP,script,statistiche,stats,reload,unici,visitatori,visite,WEB\" />";
- echo"<meta http-equiv=\"content-type\" content=\"text/html; charset=".CHARSET."\" />";
- echo"<base target=\"_top\" />";
- echo"<link type=\"text/css\" rel=\"stylesheet\" href=\"stats.css\" />";
- echo"</head>";
- echo"<body>";
- echo"<table cellspacing=\"0\" cellpadding=\"0\" style=\"width:100%;height:100%;\">";
- echo"<tr>";
- echo"<td align=\"center\">";
- echo"<div class=\"mask\">";
- echo"<form method=\"post\" action=\"".$_SERVER["PHP_SELF"]."\">";
- echo"<p>"._strlan_(LAN_MASK1,TRUE)."</p>";
- echo"<p><select name=\"id\" size=\"1\" class=\"counter\">";
-
- foreach(_ls_(CONFIG_FOLDER,CONFIG_FILES) as $__counter){
-  if(preg_match("/^([a-z\d])+$/i",$__id=preg_replace("/^".preg_replace("/\\x5C\\x2A/","(.*)",preg_quote(CONFIG_FILES,"/"))."$/","\\1",$__counter)))
-   echo"<option value=\"".$__id."\"".(($__id===$par__id)?" selected=\"selected\"":"").">".$__id."</option>";
- }
-
- echo"</select></p>";
- echo"<p>"._strlan_(LAN_MASK2,TRUE)."</p>";
- echo"<p><input type=\"password\" name=\"passwd\" class=\"passwd\" /></p>";
- echo"<p><input type=\"submit\" value=\"&gt;&gt;\" class=\"enter\" /></p>";
- echo"</form>";
- echo"</div>";
- echo"<p class=\"credits\">2002 - <a href=\"".HOMEPAGE."/index.php\">fanKounter</a> - Free PHP Script</p>";
- echo"<script type=\"text/javascript\" language=\"javascript\">try{document.forms[0].passwd.focus();}catch(_err){;}</script>";
- echo"</td>";
- echo"</tr>";
- echo"</table>";
- echo"</body>";
- echo"</html>";
- echo EOL.EOL;
- exit();
+    setcookie("passwd","");
+    
+    $view->assign("version", VERSION);
+    $view->assign("homepage", HOMEPAGE);
+    $view->assign("email", EMAIL);
+    $view->assign("title", _strlan_(LAN_TITLE1,TRUE));
+    $view->assign("charset", CHARSET);
+    $view->assign("action", $_SERVER["PHP_SELF"]);
+    $view->assign("contatore", _strlan_(LAN_MASK1,TRUE));
+    
+    $counters = array();
+    settype($control,"integer");
+    foreach(_ls_(CONFIG_FOLDER,CONFIG_FILES) as $__counter){
+        if(preg_match("/^([a-z\d])+$/i",$__id=preg_replace("/^".preg_replace("/\\x5C\\x2A/","(.*)",preg_quote(CONFIG_FILES,"/"))."$/","\\1",$__counter))){
+            $counters[$__id] = (($__id===$par__id)?" selected=\"selected\"":"");
+        }           
+    }
+    
+    $view->assign("counters", $counters);
+    $view->assign("password", _strlan_(LAN_MASK2,TRUE));
+    
+    $view->draw("login");
+    
+    exit();
 }
 elseif($cnf__passwd_protect)
  setcookie("passwd",$par__passwd);

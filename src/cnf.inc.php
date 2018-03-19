@@ -114,7 +114,7 @@ define("FLOCK_FILES", "lock_*.tmp");
 
 define("HOMEPAGE", "https://lucliscio.github.io/fanKounter");
 define("EMAIL", "lucliscio@h0model.org");
-define("VERSION", "5.0.11");
+define("VERSION", "5.1.0 alfa");
 
 ############################################################################################
 # CONFIGURAZIONE DEFAULT PER UN CONTATORE

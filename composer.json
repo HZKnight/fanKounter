@@ -11,12 +11,12 @@
 		"visitors counter",
 		"cross plattafor"
 	],
-	"homepage" : "https://github.com/lucliscio/fanKounter",
+	"homepage" : "https://lucliscio.github.io/fanKounter",
 	"license" : "GNU AGPL-3.0+",
 	"authors" : [{
 			"name" : "Luca Liscio",
 			"email" : "lucliscio@h0model.org",
-			"homepage" : "http://lucliscio.github.io",
+			"homepage" : "https://lucliscio.github.io",
 			"role" : "Developer"
 		}
 	],
@@ -28,7 +28,7 @@
 			"fankounter" : "src"
 		}
 	},
-	"minimum-stability" : "beta",
+	"minimum-stability" : "alpha",
 	"support" : {
 		"email" : "lucliscio@h0model.org",
 		"issues" : "https://github.com/lucliscio/fanKounter/issues",

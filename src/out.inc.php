@@ -82,7 +82,7 @@ if($par__mode==="graphic"){
  if(!defined("LAN_TODAY"))define("LAN_TODAY","OGGI");
  if(!defined("LAN_TOTAL"))define("LAN_TOTAL","TOTALE");
 
- define("IMG_DATA","iVBORw0KGgoAAAANSUhEUgAAAGIAAAAmCAIAAACwDtkjAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABOklEQVR4nO2Xyw2DMBBEOVAapaQSGkgJlBApx5SRdnJwDkSO490143j5CM3THjAfL3mMEen6YWQtVtcP4+3xZBXqqykQA0VTIXUu/eZCTn5NUyw53BJdk5W69mZzFzy5mRRHQVWrx9R0ud7Tms9rTBmeo0iqyTdEK2pqSVl6SRCrL5szXpWuOGtCOZRdrF7gnVRrakmZ9TOso8F+H+EzgDuto56awJRlSVEfo6opiJeUrybrTtJ2PprU/QVNVWmS2+5pKjzO3TTVLro4QxyuoekQacqyra7T7FD5uylbKbKLNW1hW96nqcnq9EeFs5Br2v3v5QFL0eQYpdOUoomoUBMENUFQEwQ1QVATBDVBUBMENUFQEwQ1QVATBDVBUBMENUFQEwQ1QVATBDVBUBMENUH8aGIV6qOJtVhvitqQTVHOp7kAAAAASUVORK5CYII=");
+ //define("IMG_DATA","iVBORw0KGgoAAAANSUhEUgAAAGIAAAAmCAIAAACwDtkjAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABOklEQVR4nO2Xyw2DMBBEOVAapaQSGkgJlBApx5SRdnJwDkSO490143j5CM3THjAfL3mMEen6YWQtVtcP4+3xZBXqqykQA0VTIXUu/eZCTn5NUyw53BJdk5W69mZzFzy5mRRHQVWrx9R0ud7Tms9rTBmeo0iqyTdEK2pqSVl6SRCrL5szXpWuOGtCOZRdrF7gnVRrakmZ9TOso8F+H+EzgDuto56awJRlSVEfo6opiJeUrybrTtJ2PprU/QVNVWmS2+5pKjzO3TTVLro4QxyuoekQacqyra7T7FD5uylbKbKLNW1hW96nqcnq9EeFs5Br2v3v5QFL0eQYpdOUoomoUBMENUFQEwQ1QVATBDVBUBMENUFQEwQ1QVATBDVBUBMENUFQEwQ1QVATBDVBUBMENUH8aGIV6qOJtVhvitqQTVHOp7kAAAAASUVORK5CYII=");
  define("TODAY_TXT_YX","4,17");
  define("TODAY_VAL_YX","39,14");
  define("TOTAL_TXT_YX","4,27");
@@ -96,8 +96,9 @@ if($par__mode==="graphic"){
  define("TOTAL_TXT_COLOR","0x14,0x14,0x50");
  define("TOTAL_VAL_COLOR","0x3C,0x3C,0x50");
 
- $__img=imagecreatefromstring(base64_decode(IMG_DATA));
-
+ //$__img=imagecreatefromstring(base64_decode(IMG_DATA));
+ $__img=imagecreatefrompng("img/counters/new_counters.png");
+ 
  eval("\$__col1=imagecolorallocate(\$__img,".TODAY_TXT_COLOR.");");
  eval("\$__col2=imagecolorallocate(\$__img,".TODAY_VAL_COLOR.");");
  eval("\$__col3=imagecolorallocate(\$__img,".TOTAL_TXT_COLOR.");");
