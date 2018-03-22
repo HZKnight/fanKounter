@@ -3,6 +3,7 @@
 [![release](http://github-release-version.herokuapp.com/github/lucliscio/fanKounter/release.svg?style=flat)](https://github.com/lucliscio/fanKounter/releases/latest)
 [![License](https://poser.pugx.org/lucliscio/fankounter/license)](https://packagist.org/packages/lucliscio/fankounter)
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ## Descrizione
 fanKounter è uno script in PHP gratuito, distribuito sotto licenza GNU AGPL, per creare e gestire una quantità indefinita di contatori (grafici, testuali o invisibili) di accessi alle pagine WEB.
