@@ -30,3 +30,7 @@ Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - Libreria GD come estensione al PHP: opzionale, o versione 2.0 e successive
 - Host server - Sistema operativo e server HTTP: qualunque
 - Utente - Sistema operativo e browser: qualunque
+
+## Ringraziamenti speciali
+### FanatiKo
+Ideatore e sviluppatore originale di fanKounter 
