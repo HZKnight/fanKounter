@@ -1,5 +1,5 @@
-<?php 
-/* 
+<?php
+/*
  * stats.php
  *                                       __                      PHP Script    _    vs 5.0
  *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
@@ -38,13 +38,13 @@
 
 /**
  * Modulo per la visualizzazione dei dati statistici.
- * 
+ *
  *  @author  lucliscio <lucliscio@h0model.org>
  *  @version v 5.0
  *  @copyright Copyright 2017 Luca Liscio
- *  @copyright Copyright 2003 Fanatiko 
+ *  @copyright Copyright 2003 Fanatiko
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
- *   
+ *
  *  @package fanKounter
  *  @filesource
  */
@@ -72,6 +72,7 @@ require("lan.inc.php");
 
 RainTPL::$tpl_dir = "template/fanKounter_classic/";
 RainTPL::$cache_dir = "temp/tpl/";
+RainTPL::$tpl_ext = "tpl";
 $view = new RainTPL();
 
 ############################################################################################
@@ -108,7 +109,7 @@ settype($cnf__limit_view,"integer");
 
 if(($par__id===FALSE)||($cnf__passwd_protect&&(md5($par__passwd)!==$cnf__userpass))){
     setcookie("passwd","");
-    
+
     $view->assign("version", VERSION);
     $view->assign("homepage", HOMEPAGE);
     $view->assign("email", EMAIL);
@@ -116,20 +117,20 @@ if(($par__id===FALSE)||($cnf__passwd_protect&&(md5($par__passwd)!==$cnf__userpas
     $view->assign("charset", CHARSET);
     $view->assign("action", $_SERVER["PHP_SELF"]);
     $view->assign("contatore", _strlan_(LAN_MASK1,TRUE));
-    
+
     $counters = array();
     settype($control,"integer");
     foreach(_ls_(CONFIG_FOLDER,CONFIG_FILES) as $__counter){
         if(preg_match("/^([a-z\d])+$/i",$__id=preg_replace("/^".preg_replace("/\\x5C\\x2A/","(.*)",preg_quote(CONFIG_FILES,"/"))."$/","\\1",$__counter))){
             $counters[$__id] = (($__id===$par__id)?" selected=\"selected\"":"");
-        }           
+        }
     }
-    
+
     $view->assign("counters", $counters);
     $view->assign("password", _strlan_(LAN_MASK2,TRUE));
-    
+
     $view->draw("login");
-    
+
     exit();
 }
 elseif($cnf__passwd_protect)
