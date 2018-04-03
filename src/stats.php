@@ -1,7 +1,7 @@
 <?php
 /*
  * stats.php
- *                                       __                      PHP Script    _    vs 5.0
+ *                                       __            HZKnight PHP Scripts    _    vs 5.1
  *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
  *                                     | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2017 Luca Liscio
+ * Copyright (C) 2018 Luca Liscio
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -40,9 +40,8 @@
  * Modulo per la visualizzazione dei dati statistici.
  *
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
- *  @copyright Copyright 2017 Luca Liscio
- *  @copyright Copyright 2003 Fanatiko
+ *  @version v 5.1
+ *  @copyright Copyright 2018 Luca Liscio
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *
  *  @package fanKounter
@@ -180,7 +179,26 @@ _funlock_();
 # OUTPUT
 ############################################################################################
 
-echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">";
+$view->assign("version", VERSION);
+$view->assign("homepage", HOMEPAGE);
+$view->assign("email", EMAIL);
+$view->assign("title", _strlan_(LAN_TITLE2,TRUE,$par__id));
+$view->assign("charset", CHARSET);
+$view->assign("action", $_SERVER["PHP_SELF"]);
+
+$menus = array();
+settype($mcontrol,"integer");
+$mcontrol = 0;
+foreach(array(_strlan_(LAN_MENU1,TRUE)=>0,_strlan_(LAN_MENU2,TRUE)=>1,_strlan_(LAN_MENU3,TRUE)=>2,_strlan_(LAN_MENU4,TRUE)=>3,_strlan_(LAN_MENU5,TRUE)=>4,_strlan_(LAN_MENU6,TRUE)=>5) as $__name=>$__panel){
+    
+    echo"<input type=\"hidden\" name=\"id\" value=\"".$par__id."\" />";
+    echo"<input type=\"hidden\" name=\"panel\" value=\"".$__panel."\" />";
+    echo ($par__panel===$__panel)?("<input type=\"submit\" value=\"".$__name."\" class=\"menu_hi\" />"):("<input type=\"submit\" value=\"".$__name."\" onmouseover=\"javascript:this.className=&quot;menu_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menu&quot;;\" class=\"menu\" />");
+    echo"</form>";
+    echo"</td>";
+}
+
+/*echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">";
 echo EOL.EOL;
 echo"<!-- fanKounter v".VERSION." - by fanatiko (Italy) //-->";
 echo EOL;
@@ -214,7 +232,7 @@ foreach(array(_strlan_(LAN_MENU1,TRUE)=>0,_strlan_(LAN_MENU2,TRUE)=>1,_strlan_(L
  echo ($par__panel===$__panel)?("<input type=\"submit\" value=\"".$__name."\" class=\"menu_hi\" />"):("<input type=\"submit\" value=\"".$__name."\" onmouseover=\"javascript:this.className=&quot;menu_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menu&quot;;\" class=\"menu\" />");
  echo"</form>";
  echo"</td>";
-}
+}*/
 
 echo"<td valign=\"bottom\">";
 echo"<form method=\"post\" action=\"".$_SERVER["PHP_SELF"]."\">";

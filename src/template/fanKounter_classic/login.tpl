@@ -23,9 +23,9 @@
 	 						<p>
 	 							<select name="id" size="1" class="counter">
 									
-									{loop="$counters"}
-										<option value="{$key}" {$value}>{$key}</option>	
-        							{/loop}									
+								{loop="$counters"}
+									<option value="{$key}" {$value}>{$key}</option>	
+        						{/loop}									
 									
 	 							</select>
 	 						</p>
@@ -35,7 +35,7 @@
  						</form>
  					</div>
  					<p class="credits">
- 						&copy;2017 HZKnight | &copy;2002 fanatiko
+ 						&copy;2018 HZKnight | &copy;2002 fanatiko
  						<br/><a href="{$homepage}">fanKounter</a> a Free PHP Script
  					</p>
  					<script type="text/javascript" language="javascript">
