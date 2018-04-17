@@ -65,7 +65,7 @@ define("LAN_DAYS","luned&igrave;,marted&igrave;,mercoled&igrave;,gioved&igrave;,
 
 // Titoli della pagina
 define("LAN_TITLE1","fanKounter :: Statistiche");
-define("LAN_TITLE2","fanKounter :: Statistiche per ".chr(171)."%s".chr(187));
+define("LAN_TITLE2","fanKounter :: Statistiche per «%s»");
 
 // Testi della maschera di accesso
 define("LAN_MASK1","Seleziona un contatore:");
@@ -81,7 +81,7 @@ define("LAN_MENU6","CALENDARIO");
 define("LAN_MENU7","ESCI");
 
 // Altre voci generiche
-define("LAN_HEADER","Statistiche per ".chr(171)."[count]%1\$s[/count]".chr(187)." in data [date]%2\$s[/date] ore [hi]%3\$s[/hi]");
+define("LAN_HEADER","Statistiche per «[count]%1\$s[/count]» in data [date]%2\$s[/date] ore [hi]%3\$s[/hi]");
 define("LAN_TOP","- TOP -");
 
 // Altre voci comuni

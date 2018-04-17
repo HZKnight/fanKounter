@@ -190,72 +190,40 @@ $menus = array();
 settype($mcontrol,"integer");
 $mcontrol = 0;
 foreach(array(_strlan_(LAN_MENU1,TRUE)=>0,_strlan_(LAN_MENU2,TRUE)=>1,_strlan_(LAN_MENU3,TRUE)=>2,_strlan_(LAN_MENU4,TRUE)=>3,_strlan_(LAN_MENU5,TRUE)=>4,_strlan_(LAN_MENU6,TRUE)=>5) as $__name=>$__panel){
-    
-    echo"<input type=\"hidden\" name=\"id\" value=\"".$par__id."\" />";
-    echo"<input type=\"hidden\" name=\"panel\" value=\"".$__panel."\" />";
-    echo ($par__panel===$__panel)?("<input type=\"submit\" value=\"".$__name."\" class=\"menu_hi\" />"):("<input type=\"submit\" value=\"".$__name."\" onmouseover=\"javascript:this.className=&quot;menu_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menu&quot;;\" class=\"menu\" />");
-    echo"</form>";
-    echo"</td>";
+    $menus[$mcontrol]->id = $par__id;
+    $menus[$mcontrol]->panel = $__panel;
+    $menus[$mcontrol]->tab_header = ($par__panel===$__panel)?("<input type=\"submit\" value=\"".$__name."\" class=\"menu_hi\" />"):("<input type=\"submit\" value=\"".$__name."\" onmouseover=\"javascript:this.className=&quot;menu_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menu&quot;;\" class=\"menu\" />");
+    $mcontrol++;
 }
 
-/*echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">";
-echo EOL.EOL;
-echo"<!-- fanKounter v".VERSION." - by fanatiko (Italy) //-->";
-echo EOL;
-echo"<!-- ".HOMEPAGE." //-->";
-echo EOL;
-echo"<!-- mailto:".EMAIL." //-->";
-echo EOL.EOL;
-echo"<html>";
-echo"<head>";
-echo"<title>"._strlan_(LAN_TITLE2,TRUE,$par__id)."</title>";
-echo"<meta name=\"description\" content=\"fanKounter: uno script in PHP per creare e gestire contatori di visite con statistiche per pagine WEB.\" />";
-echo"<meta name=\"keywords\" content=\"accessi,contatore,counter,fanKounter,pagine,PHP,script,statistiche,stats,reload,unici,visitatori,visite,WEB\" />";
-echo"<meta http-equiv=\"content-type\" content=\"text/html; charset=".CHARSET."\" />";
-echo"<base target=\"_top\" />";
-echo"<link type=\"text/css\" rel=\"stylesheet\" href=\"stats.css\" />";
-echo"<script type=\"text/javascript\" language=\"javascript\" src=\"".HOMEPAGE."/adnews.php?v=".VERSION."\"></script>";
-echo"</head>";
-echo"<body>";
-echo"<div align=\"center\">";
-echo"<table cellspacing=\"0\" cellpadding=\"0\" class=\"conteiner\">";
-echo"<tr>";
-echo"<td align=\"center\">";
-echo"<table cellspacing=\"0\" cellpadding=\"0\">";
-echo"<tr>";
+$view->assign("menus", $menus);
+$view->assign("exit", _strlan_(LAN_MENU7,TRUE));
+$view->assign("header", _strlan_(LAN_HEADER,FALSE,$par__id,_strdate_($aux__now,"d"),date("G:i",$aux__now),_strdate_($aux__now,"w")));
 
-foreach(array(_strlan_(LAN_MENU1,TRUE)=>0,_strlan_(LAN_MENU2,TRUE)=>1,_strlan_(LAN_MENU3,TRUE)=>2,_strlan_(LAN_MENU4,TRUE)=>3,_strlan_(LAN_MENU5,TRUE)=>4,_strlan_(LAN_MENU6,TRUE)=>5) as $__name=>$__panel){
- echo"<td valign=\"bottom\">";
- echo"<form method=\"post\" action=\"".$_SERVER["PHP_SELF"]."\">";
- echo"<input type=\"hidden\" name=\"id\" value=\"".$par__id."\" />";
- echo"<input type=\"hidden\" name=\"panel\" value=\"".$__panel."\" />";
- echo ($par__panel===$__panel)?("<input type=\"submit\" value=\"".$__name."\" class=\"menu_hi\" />"):("<input type=\"submit\" value=\"".$__name."\" onmouseover=\"javascript:this.className=&quot;menu_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menu&quot;;\" class=\"menu\" />");
- echo"</form>";
- echo"</td>";
-}*/
+switch ($par__panel) {
+    case "0":
+        $view->assign("content", _panel0_());
+        break;
+    case "1":
+        $view->assign("content", _panel1_());
+        break;
+    case "2":
+        $view->assign("content", _panel2_());
+        break;
+    case "3":
+        $view->assign("content", _panel3_());
+        break;
+    case "4":
+        $view->assign("content", _panel4_());
+        break;
+    case "5":
+        $view->assign("content", _panel5_());
+        break;
+}
 
-echo"<td valign=\"bottom\">";
-echo"<form method=\"post\" action=\"".$_SERVER["PHP_SELF"]."\">";
-echo"<input type=\"submit\" value=\""._strlan_(LAN_MENU7,TRUE)."\" onmouseover=\"javascript:this.className=&quot;menuq_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menuq&quot;;\" class=\"menuq\" />";
-echo"</form>";
-echo"</td>";
-echo"</tr>";
-echo"</table>";
-echo"</td>";
-echo"</tr>";
-echo"<tr>";
-echo"<td class=\"conteiner\">";
-echo"<p class=\"header\">"._strlan_(LAN_HEADER,FALSE,$par__id,_strdate_($aux__now,"d"),date("G:i",$aux__now),_strdate_($aux__now,"w"))."</p>";
-eval("_panel".$par__panel."_();");
-echo"<p class=\"top\"><a href=\"javascript:scroll(0,0);\">"._strlan_(LAN_TOP,TRUE)."</a></p>";
-echo"</td>";
-echo"</tr>";
-echo"</table>";
-echo"<p class=\"credits\">&copy2017 HZKnight | &copy;2002 fanatiko | <a href=\"".HOMEPAGE."/index.php\">fanKounter</a> a Free PHP Script</p>";
-echo"</div>";
-echo"</body>";
-echo"</html>";
-echo EOL.EOL;
+$view->assign("top", _strlan_(LAN_TOP,TRUE));
+
+$view->draw("stats");
 exit();
 
 ############################################################################################
@@ -263,47 +231,52 @@ exit();
 ############################################################################################
 
 function _panel0_(){
- global $par__id;
- global $cnf__mtime_unique_accs,$cnf__expire_on_midnight,$cnf__count_per_pages;
- global $dat__counter,$dat__started;
- global $aux__now,$aux__calendar;
+    global $par__id;
+    global $cnf__mtime_unique_accs,$cnf__expire_on_midnight,$cnf__count_per_pages;
+    global $dat__counter,$dat__started;
+    global $aux__now,$aux__calendar;
 
- $__max4d=$aux__calendar->_max_hits_in_date_();
- $__max4m=$aux__calendar->_max_hits_in_month_();
- $__gd=(extension_loaded("gd"))?gd_info():FALSE;
+    $__max4d=$aux__calendar->_max_hits_in_date_();
+    $__max4m=$aux__calendar->_max_hits_in_month_();
+    $__gd=(extension_loaded("gd"))?gd_info():FALSE;
 
- echo"<p class=\"title\">"._strlan_(LAN001)."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN002,FALSE,$aux__calendar->_get_hits_($aux__now,"d"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN003,FALSE,$aux__calendar->_get_hits_(_tsoffset_(-1,"d"),"d"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN004,FALSE,$aux__calendar->_get_hits_($aux__now,"m"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN005,FALSE,$aux__calendar->_get_hits_(_tsoffset_(-1,"m"),"m"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN006,FALSE,$aux__calendar->_get_hits_($aux__now,"y"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN007,FALSE,$aux__calendar->_get_hits_(_tsoffset_(-1,"y"),"y"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN008,FALSE,($dat__counter-$dat__started["counter"]))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN009,FALSE,round(($dat__counter-$dat__started["counter"])/_pastdays_($dat__started["timestamp"],3),1))."</p>";
- echo"<p class=\"title\">"._strlan_(LAN010)."</p>";
+    ob_start();
 
- if($cnf__mtime_unique_accs===0)
-  echo"<p class=\"summary\">"._strlan_(LAN011)."</p>";
- else{
-  echo"<p class=\"summary\">"._strlan_(LAN012,FALSE,round(floor($cnf__mtime_unique_accs/60),0),$cnf__mtime_unique_accs%60)."</p>";
-  echo (($cnf__expire_on_midnight)?("<p class=\"summary\">"._strlan_(LAN013)."</p>"):"");
-  echo"<p class=\"summary\">".(($cnf__count_per_pages)?_strlan_(LAN014):_strlan_(LAN015))."</p>";
- }
+    echo"<p class=\"title\">"._strlan_(LAN001)."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN002,FALSE,$aux__calendar->_get_hits_($aux__now,"d"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN003,FALSE,$aux__calendar->_get_hits_(_tsoffset_(-1,"d"),"d"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN004,FALSE,$aux__calendar->_get_hits_($aux__now,"m"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN005,FALSE,$aux__calendar->_get_hits_(_tsoffset_(-1,"m"),"m"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN006,FALSE,$aux__calendar->_get_hits_($aux__now,"y"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN007,FALSE,$aux__calendar->_get_hits_(_tsoffset_(-1,"y"),"y"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN008,FALSE,($dat__counter-$dat__started["counter"]))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN009,FALSE,round(($dat__counter-$dat__started["counter"])/_pastdays_($dat__started["timestamp"],3),1))."</p>";
+    echo"<p class=\"title\">"._strlan_(LAN010)."</p>";
 
- echo"<p class=\"title\">"._strlan_(LAN016)."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN017,FALSE,$__max4d["hits"],_strdate_($__max4d["timestamp"],"d"),FALSE,_strdate_($__max4d["timestamp"],"w"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN018,FALSE,$__max4m["hits"],_strdate_($__max4m["timestamp"],"m"))."</p>";
- echo"<p class=\"title\">"._strlan_(LAN019)."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN020,FALSE,_filename_(CONFIG_FILES,$par__id))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN021,FALSE,_filename_(DATA_FILES,$par__id),_filesize_(DATA_FOLDER._filename_(DATA_FILES,$par__id)))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN022,FALSE,_strdate_($dat__started["timestamp"],"d"),$dat__started["counter"],FALSE,_strdate_($__max4d["timestamp"],"w"))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN023,FALSE,_pastdays_($dat__started["timestamp"],0),$dat__counter)."</p>";
- echo"<p class=\"title\">"._strlan_(LAN024)."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN025,FALSE,phpversion())."</p>";
- echo"<p class=\"summary\">".(($__gd!==FALSE)?_strlan_(LAN026,FALSE,$__gd["GD Version"]):_strlan_(LAN027))."</p>";
- echo"<p class=\"summary\">"._strlan_(LAN028,FALSE,VERSION)."</p>";
- return;
+    if($cnf__mtime_unique_accs===0)
+        echo"<p class=\"summary\">"._strlan_(LAN011)."</p>";
+    else{
+        echo"<p class=\"summary\">"._strlan_(LAN012,FALSE,round(floor($cnf__mtime_unique_accs/60),0),$cnf__mtime_unique_accs%60)."</p>";
+        echo (($cnf__expire_on_midnight)?("<p class=\"summary\">"._strlan_(LAN013)."</p>"):"");
+        echo"<p class=\"summary\">".(($cnf__count_per_pages)?_strlan_(LAN014):_strlan_(LAN015))."</p>";
+    }
+
+    echo"<p class=\"title\">"._strlan_(LAN016)."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN017,FALSE,$__max4d["hits"],_strdate_($__max4d["timestamp"],"d"),FALSE,_strdate_($__max4d["timestamp"],"w"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN018,FALSE,$__max4m["hits"],_strdate_($__max4m["timestamp"],"m"))."</p>";
+    echo"<p class=\"title\">"._strlan_(LAN019)."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN020,FALSE,_filename_(CONFIG_FILES,$par__id))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN021,FALSE,_filename_(DATA_FILES,$par__id),_filesize_(DATA_FOLDER._filename_(DATA_FILES,$par__id)))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN022,FALSE,_strdate_($dat__started["timestamp"],"d"),$dat__started["counter"],FALSE,_strdate_($__max4d["timestamp"],"w"))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN023,FALSE,_pastdays_($dat__started["timestamp"],0),$dat__counter)."</p>";
+    echo"<p class=\"title\">"._strlan_(LAN024)."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN025,FALSE,phpversion())."</p>";
+    echo"<p class=\"summary\">".(($__gd!==FALSE)?_strlan_(LAN026,FALSE,$__gd["GD Version"]):_strlan_(LAN027))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN028,FALSE,VERSION)."</p>";
+
+    $pcontent = ob_get_contents();
+    ob_end_clean();   
+    return $pcontent;     
 }
 
 ############################################################################################
@@ -311,87 +284,91 @@ function _panel0_(){
 ############################################################################################
 
 function _panel1_(){
- global $cnf__last_entries;
- global $dat__entry;
- global $inf__country;
+    global $cnf__last_entries;
+    global $dat__entry;
+    global $inf__country;
 
- echo"<p class=\"title\">"._strlan_(LAN101,FALSE,$cnf__last_entries)."</p>";
+    ob_start();
 
- foreach(array_reverse($dat__entry,TRUE) as $__entry=>$__data){
-  $__ip=($__data["ip"]!=="")?$__data["ip"]:("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_IP,TRUE)."</span>");
-  $__host=($__data["host"]!=="")?_strlan_($__data["host"],TRUE):FALSE;
-  $__hostext=(preg_match("/\.([a-z]{2,4})$/i",$__data["host"],$__res)&&array_key_exists(strtolower($__res[1]),$inf__country))?strtolower($__res[1]):FALSE;
-  $__cou2l=($__hostext!==FALSE)?strtoupper($__hostext):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_COUNTRY,TRUE)."</span>");
-  $__cou=($__hostext!==FALSE)?_strlan_($inf__country[$__hostext],TRUE):FALSE;
-  $__age=($__data["age"]!=="")?_strlan_($__data["age"],TRUE):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_BROWSER,TRUE)."</span>");
-  $__os=($__data["os"]!=="")?_strlan_($__data["os"],TRUE):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_OS,TRUE)."</span>");
-  $__loc=($__data["loc"]!=="")?_strlan_(urldecode($__data["loc"]),TRUE):FALSE;
-  $__strloc=($__loc!==FALSE)?("<a href=\"".$__loc."\" title=\"".$__loc."\">"._strcut_($__loc,70)."</a>"):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_LOCATION,TRUE)."</span>");
-  $__ref=($__data["ref"]!=="")?_strlan_(urldecode($__data["ref"]),TRUE):FALSE;
-  $__strref=($__ref!==FALSE)?("<a href=\"".$__ref."\" title=\"".$__ref."\">"._strcut_($__ref,70)."</a>"):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_REFERRER,TRUE)."</span>");
-  $__eng=($__data["eng"]!=="")?_strlan_($__data["eng"],TRUE):FALSE;
-  $__enk=($__data["enk"]!=="")?_strlan_($__data["enk"],TRUE):FALSE;
-  $__strrefeng=(($__eng!==FALSE)&&($__enk!==FALSE))?("<a href=\"http://www.".$__eng."\" title=\"http://www.".$__eng."\">".ucfirst(_strcut_($__eng,30))."</a> ("._strcut_($__enk,40).")"):$__strref;
+    echo"<p class=\"title\">"._strlan_(LAN101,FALSE,$cnf__last_entries)."</p>";
 
-  echo"<table cellspacing=\"0\" cellpadding=\"0\" class=\"entry\">";
-  echo"<tr>";
-  echo"<td colspan=\"2\" class=\"header\">";
-  echo"<p>"._strlan_(LAN102,TRUE)."</p>";
-  echo"</td>";
-  echo"<td colspan=\"2\" class=\"entry\">";
-  echo"<p>".$__entry."</p>";
-  echo"</td>";
-  echo"<td colspan=\"6\" class=\"date\">";
-  echo"<p>"._strdate_($__data["ts"],"w").", "._strdate_($__data["ts"],"d")." ".date("H:i",$__data["ts"])."</p>";
-  echo"</td>";
-  echo"<tr>";
-  echo"<td colspan=\"2\" class=\"header\">";
-  echo"<p>"._strlan_(LAN103,TRUE)."</p>";
-  echo"</td>";
-  echo"<td colspan=\"2\" class=\"header\">";
-  echo"<p>"._strlan_(LAN104,TRUE)."</p>";
-  echo"</td>";
-  echo"<td colspan=\"3\" class=\"header\">";
-  echo"<p>"._strlan_(LAN105,TRUE)."</p>";
-  echo"</td>";
-  echo"<td colspan=\"3\" class=\"header\">";
-  echo"<p>"._strlan_(LAN106,TRUE)."</p>";
-  echo"</td>";
-  echo"</tr>";
-  echo"<tr>";
-  echo"<td colspan=\"2\" class=\"country\">";
-  echo"<p title=\"".$__cou."\" style=\"cursor:help;\">".$__cou2l."</p>";
-  echo"</td>";
-  echo"<td colspan=\"2\" class=\"ip\">";
-  echo"<p title=\"".$__host."\" style=\"cursor:help;\">".$__ip."</p>";
-  echo"</td>";
-  echo"<td colspan=\"3\" class=\"browser\">";
-  echo"<p>".$__age."</p>";
-  echo"</td>";
-  echo"<td colspan=\"3\" class=\"os\">";
-  echo"<p>".$__os."</p>";
-  echo"</td>";
-  echo"</tr>";
-  echo"<tr>";
-  echo"<td colspan=\"2\" class=\"header\">";
-  echo"<p>"._strlan_(LAN107,TRUE)."</p>";
-  echo"</td>";
-  echo"<td colspan=\"8\" class=\"location\">";
-  echo"<p>".$__strloc."</p>";
-  echo"</td>";
-  echo"</tr>";
-  echo"<tr>";
-  echo"<td colspan=\"2\" class=\"header\">";
-  echo"<p>"._strlan_(LAN108,TRUE)."</p>";
-  echo"</td>";
-  echo"<td colspan=\"8\" class=\"referrer\">";
-  echo"<p>".$__strrefeng."</p>";
-  echo"</td>";
-  echo"</tr>";
-  echo"</table>";
- }
+    foreach(array_reverse($dat__entry,TRUE) as $__entry=>$__data){
+        $__ip=($__data["ip"]!=="")?$__data["ip"]:("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_IP,TRUE)."</span>");
+        $__host=($__data["host"]!=="")?_strlan_($__data["host"],TRUE):FALSE;
+        $__hostext=(preg_match("/\.([a-z]{2,4})$/i",$__data["host"],$__res)&&array_key_exists(strtolower($__res[1]),$inf__country))?strtolower($__res[1]):FALSE;
+        $__cou2l=($__hostext!==FALSE)?strtoupper($__hostext):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_COUNTRY,TRUE)."</span>");
+        $__cou=($__hostext!==FALSE)?_strlan_($inf__country[$__hostext],TRUE):FALSE;
+        $__age=($__data["age"]!=="")?_strlan_($__data["age"],TRUE):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_BROWSER,TRUE)."</span>");
+        $__os=($__data["os"]!=="")?_strlan_($__data["os"],TRUE):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_OS,TRUE)."</span>");
+        $__loc=($__data["loc"]!=="")?_strlan_(urldecode($__data["loc"]),TRUE):FALSE;
+        $__strloc=($__loc!==FALSE)?("<a href=\"".$__loc."\" title=\"".$__loc."\">"._strcut_($__loc,70)."</a>"):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_LOCATION,TRUE)."</span>");
+        $__ref=($__data["ref"]!=="")?_strlan_(urldecode($__data["ref"]),TRUE):FALSE;
+        $__strref=($__ref!==FALSE)?("<a href=\"".$__ref."\" title=\"".$__ref."\">"._strcut_($__ref,70)."</a>"):("<span class=\"unknown\">"._strlan_(LAN_UNKNOWN_REFERRER,TRUE)."</span>");
+        $__eng=($__data["eng"]!=="")?_strlan_($__data["eng"],TRUE):FALSE;
+        $__enk=($__data["enk"]!=="")?_strlan_($__data["enk"],TRUE):FALSE;
+        $__strrefeng=(($__eng!==FALSE)&&($__enk!==FALSE))?("<a href=\"http://www.".$__eng."\" title=\"http://www.".$__eng."\">".ucfirst(_strcut_($__eng,30))."</a> ("._strcut_($__enk,40).")"):$__strref;
 
- return;
+        echo"<table cellspacing=\"0\" cellpadding=\"0\" class=\"entry\">";
+        echo"<tr>";
+        echo"<td colspan=\"2\" class=\"header\">";
+        echo"<p>"._strlan_(LAN102,TRUE)."</p>";
+        echo"</td>";
+        echo"<td colspan=\"2\" class=\"entry\">";
+        echo"<p>".$__entry."</p>";
+        echo"</td>";
+        echo"<td colspan=\"6\" class=\"date\">";
+        echo"<p>"._strdate_($__data["ts"],"w").", "._strdate_($__data["ts"],"d")." ".date("H:i",$__data["ts"])."</p>";
+        echo"</td>";
+        echo"<tr>";
+        echo"<td colspan=\"2\" class=\"header\">";
+        echo"<p>"._strlan_(LAN103,TRUE)."</p>";
+        echo"</td>";
+        echo"<td colspan=\"2\" class=\"header\">";
+        echo"<p>"._strlan_(LAN104,TRUE)."</p>";
+        echo"</td>";
+        echo"<td colspan=\"3\" class=\"header\">";
+        echo"<p>"._strlan_(LAN105,TRUE)."</p>";
+        echo"</td>";
+        echo"<td colspan=\"3\" class=\"header\">";
+        echo"<p>"._strlan_(LAN106,TRUE)."</p>";
+        echo"</td>";
+        echo"</tr>";
+        echo"<tr>";
+        echo"<td colspan=\"2\" class=\"country\">";
+        echo"<p title=\"".$__cou."\" style=\"cursor:help;\">".$__cou2l."</p>";
+        echo"</td>";
+        echo"<td colspan=\"2\" class=\"ip\">";
+        echo"<p title=\"".$__host."\" style=\"cursor:help;\">".$__ip."</p>";
+        echo"</td>";
+        echo"<td colspan=\"3\" class=\"browser\">";
+        echo"<p>".$__age."</p>";
+        echo"</td>";
+        echo"<td colspan=\"3\" class=\"os\">";
+        echo"<p>".$__os."</p>";
+        echo"</td>";
+        echo"</tr>";
+        echo"<tr>";
+        echo"<td colspan=\"2\" class=\"header\">";
+        echo"<p>"._strlan_(LAN107,TRUE)."</p>";
+        echo"</td>";
+        echo"<td colspan=\"8\" class=\"location\">";
+        echo"<p>".$__strloc."</p>";
+        echo"</td>";
+        echo"</tr>";
+        echo"<tr>";
+        echo"<td colspan=\"2\" class=\"header\">";
+        echo"<p>"._strlan_(LAN108,TRUE)."</p>";
+        echo"</td>";
+        echo"<td colspan=\"8\" class=\"referrer\">";
+        echo"<p>".$__strrefeng."</p>";
+        echo"</td>";
+        echo"</tr>";
+        echo"</table>";
+    }
+
+    $pcontent = ob_get_contents();
+    ob_end_clean();   
+    return $pcontent;  
 }
 
 ############################################################################################
@@ -399,11 +376,16 @@ function _panel1_(){
 ############################################################################################
 
 function _panel2_(){
- global $dat__location;
+    global $dat__location;
 
- _graph_($dat__location,"url",LAN201,LAN202,LAN203,LAN204,7,2,1,LAN_UNKNOWN_LOCATION,60,TRUE);
- _graph_(_domains_($dat__location),"url",LAN205,LAN206,LAN207,LAN208,6,3,1,LAN_UNKNOWN_LOCATION,50,TRUE);
- return;
+    ob_start();
+
+    _graph_($dat__location,"url",LAN201,LAN202,LAN203,LAN204,7,2,1,LAN_UNKNOWN_LOCATION,60,TRUE);
+    _graph_(_domains_($dat__location),"url",LAN205,LAN206,LAN207,LAN208,6,3,1,LAN_UNKNOWN_LOCATION,50,TRUE);
+    
+    $pcontent = ob_get_contents();
+    ob_end_clean();   
+    return $pcontent;  
 }
 
 ############################################################################################
@@ -411,13 +393,18 @@ function _panel2_(){
 ############################################################################################
 
 function _panel3_(){
- global $dat__referrer,$dat__engine,$dat__enkey;
+    global $dat__referrer,$dat__engine,$dat__enkey;
+    
+    ob_start();
 
- _graph_($dat__referrer,"url",LAN301,LAN302,LAN303,LAN304,7,2,1,LAN_UNKNOWN_REFERRER,60,TRUE);
- _graph_(_domains_($dat__referrer),"url",LAN305,LAN306,LAN307,LAN308,6,3,1,LAN_UNKNOWN_REFERRER,50,TRUE);
- _graph_($dat__engine,"engine",LAN309,LAN310,LAN311,LAN312,5,4,1,FALSE,40,TRUE);
- _graph_($dat__enkey,"other",LAN313,LAN314,LAN315,LAN316,5,4,1,FALSE,40,TRUE);
- return;
+    _graph_($dat__referrer,"url",LAN301,LAN302,LAN303,LAN304,7,2,1,LAN_UNKNOWN_REFERRER,60,TRUE);
+    _graph_(_domains_($dat__referrer),"url",LAN305,LAN306,LAN307,LAN308,6,3,1,LAN_UNKNOWN_REFERRER,50,TRUE);
+    _graph_($dat__engine,"engine",LAN309,LAN310,LAN311,LAN312,5,4,1,FALSE,40,TRUE);
+    _graph_($dat__enkey,"other",LAN313,LAN314,LAN315,LAN316,5,4,1,FALSE,40,TRUE);
+
+    $pcontent = ob_get_contents();
+    ob_end_clean();   
+    return $pcontent; 
 }
 
 ############################################################################################
@@ -425,13 +412,18 @@ function _panel3_(){
 ############################################################################################
 
 function _panel4_(){
- global $dat__browser,$dat__os,$dat__provider,$dat__country;
+    global $dat__browser,$dat__os,$dat__provider,$dat__country;
 
- _graph_($dat__browser,"other",LAN401,LAN402,LAN403,LAN404,5,4,1,LAN_UNKNOWN_BROWSER,40,TRUE);
- _graph_($dat__os,"other",LAN405,LAN406,LAN407,LAN408,5,4,1,LAN_UNKNOWN_OS,40,TRUE);
- _graph_($dat__provider,"other",LAN409,LAN410,LAN411,LAN412,5,4,1,LAN_UNKNOWN_PROVIDER,40,TRUE);
- _graph_($dat__country,"country",LAN413,LAN414,LAN415,LAN416,5,4,1,LAN_UNKNOWN_COUNTRY,40,TRUE);
- return;
+    ob_start();
+
+    _graph_($dat__browser,"other",LAN401,LAN402,LAN403,LAN404,5,4,1,LAN_UNKNOWN_BROWSER,40,TRUE);
+    _graph_($dat__os,"other",LAN405,LAN406,LAN407,LAN408,5,4,1,LAN_UNKNOWN_OS,40,TRUE);
+    _graph_($dat__provider,"other",LAN409,LAN410,LAN411,LAN412,5,4,1,LAN_UNKNOWN_PROVIDER,40,TRUE);
+    _graph_($dat__country,"country",LAN413,LAN414,LAN415,LAN416,5,4,1,LAN_UNKNOWN_COUNTRY,40,TRUE);
+
+    $pcontent = ob_get_contents();
+    ob_end_clean();   
+    return $pcontent;
 }
 
 ############################################################################################
@@ -439,21 +431,26 @@ function _panel4_(){
 ############################################################################################
 
 function _panel5_(){
- global $dat__day,$dat__time;
- global $aux__calendar;
+    global $dat__day,$dat__time;
+    global $aux__calendar;
 
- for($__days=array(),$__count=-30;$__count<=0;$__count++)
-  $__days[$__ts=_tsoffset_($__count,"d")]=$aux__calendar->_get_hits_($__ts,"d");
+    ob_start();
 
- for($__months=array(),$__count=-11;$__count<=0;$__count++)
-  $__months[$__ts=_tsoffset_($__count,"m")]=$aux__calendar->_get_hits_($__ts,"m");
+    for($__days=array(),$__count=-30;$__count<=0;$__count++)
+        $__days[$__ts=_tsoffset_($__count,"d")]=$aux__calendar->_get_hits_($__ts,"d");
 
- _graph_($__days,"day",LAN501,LAN502,LAN503,LAN504,4,5,1,FALSE,30,FALSE);
- _graph_($__months,"mounth",LAN505,LAN506,LAN507,LAN508,4,5,1,FALSE,30,FALSE);
- _graph_($aux__calendar->_get_years_(),"other",LAN509,LAN510,LAN511,LAN512,4,5,1,FALSE,30,FALSE);
- _graph_($dat__day,"week",LAN513,LAN514,LAN515,LAN516,4,5,1,FALSE,30,FALSE);
- _graph_($dat__time,"hour",LAN517,LAN518,LAN519,LAN520,4,5,1,FALSE,30,FALSE);
- return;
+    for($__months=array(),$__count=-11;$__count<=0;$__count++)
+        $__months[$__ts=_tsoffset_($__count,"m")]=$aux__calendar->_get_hits_($__ts,"m");
+
+    _graph_($__days,"day",LAN501,LAN502,LAN503,LAN504,4,5,1,FALSE,30,FALSE);
+    _graph_($__months,"mounth",LAN505,LAN506,LAN507,LAN508,4,5,1,FALSE,30,FALSE);
+    _graph_($aux__calendar->_get_years_(),"other",LAN509,LAN510,LAN511,LAN512,4,5,1,FALSE,30,FALSE);
+    _graph_($dat__day,"week",LAN513,LAN514,LAN515,LAN516,4,5,1,FALSE,30,FALSE);
+    _graph_($dat__time,"hour",LAN517,LAN518,LAN519,LAN520,4,5,1,FALSE,30,FALSE);
+    
+    $pcontent = ob_get_contents();
+    ob_end_clean();   
+    return $pcontent;
 }
 
 ############################################################################################
@@ -656,7 +653,7 @@ function _graph_($__data,$__type,$__title,$__header1,$__header2,$__header3,$__co
       $__stritem=_strlan_(_strcut_((array_key_exists($__item,$inf__country))?$inf__country[$__item]:$__item,$__strcut),TRUE);
       break;
      case "h":
-      $__stritem=sprintf("%02d:00 ".chr(247)." %02d:00",$__item,$__item+1);
+      $__stritem=sprintf("%02d:00 - %02d:00",$__item,$__item+1);
       break;
      case "d":
       $__stritem="<span title=\""._strlan_(_strdate_($__item,"w"),TRUE)."\"".(((int)date("w",$__item)===0)?" class=\"sunday\"":"")." style=\"cursor:help;\">"._strlan_(_strcut_(_strdate_($__item,"d"),$__strcut),TRUE)."</span>";

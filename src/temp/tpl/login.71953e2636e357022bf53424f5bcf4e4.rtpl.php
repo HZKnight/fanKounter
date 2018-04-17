@@ -23,9 +23,9 @@
 	 						<p>
 	 							<select name="id" size="1" class="counter">
 									
-									<?php $counter1=-1; if( isset($counters) && is_array($counters) && sizeof($counters) ) foreach( $counters as $key1 => $value1 ){ $counter1++; ?>
-										<option value="<?php echo $key1;?>" <?php echo $value1;?>><?php echo $key1;?></option>	
-        							<?php } ?>									
+								<?php $counter1=-1; if( isset($counters) && is_array($counters) && sizeof($counters) ) foreach( $counters as $key1 => $value1 ){ $counter1++; ?>
+									<option value="<?php echo $key1;?>" <?php echo $value1;?>><?php echo $key1;?></option>	
+        						<?php } ?>									
 									
 	 							</select>
 	 						</p>
@@ -35,7 +35,7 @@
  						</form>
  					</div>
  					<p class="credits">
- 						&copy;2017 HZKnight | &copy;2002 fanatiko
+ 						&copy;2018 HZKnight | &copy;2002 fanatiko
  						<br/><a href="<?php echo $homepage;?>">fanKounter</a> a Free PHP Script
  					</p>
  					<script type="text/javascript" language="javascript">

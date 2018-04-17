@@ -14,25 +14,26 @@
     </head>
     <body>
         <div align="center">
+            <img src="../../img/fk_newlogo.png" style="width:200px"><br/><br/>
             <table cellspacing="0" cellpadding="0" class="conteiner">
                 <tr>
                     <td align="center">
                         <table cellspacing="0" cellpadding="0">
                             <tr>
 
-foreach(array(_strlan_(LAN_MENU1,TRUE)=>0,_strlan_(LAN_MENU2,TRUE)=>1,_strlan_(LAN_MENU3,TRUE)=>2,_strlan_(LAN_MENU4,TRUE)=>3,_strlan_(LAN_MENU5,TRUE)=>4,_strlan_(LAN_MENU6,TRUE)=>5) as $__name=>$__panel){
- echo"<td valign=\"bottom\">";
- echo"<form method=\"post\" action=\"".$_SERVER["PHP_SELF"]."\">";
- echo"<input type=\"hidden\" name=\"id\" value=\"".$par__id."\" />";
- echo"<input type=\"hidden\" name=\"panel\" value=\"".$__panel."\" />";
- echo ($par__panel===$__panel)?("<input type=\"submit\" value=\"".$__name."\" class=\"menu_hi\" />"):("<input type=\"submit\" value=\"".$__name."\" onmouseover=\"javascript:this.className=&quot;menu_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menu&quot;;\" class=\"menu\" />");
- echo"</form>";
- echo"</td>";
-}
+                            {loop="$menus"}
+								<td valign="bottom">
+                                    <form method="post" action="{$action}">
+                                        <input type="hidden" name="id" value="{$value->id}"/>
+                                        <input type="hidden" name="panel" value="{$value->panel}"/>
+                                        {$value->tab_header}
+                                    </form>
+                                </td>
+        					{/loop}	
 
                                 <td valign="bottom">
-                                    <form method="post" action="{{$_SERVER["PHP_SELF"]}}>
-                                        <input type="submit" value="{{_strlan_(LAN_MENU7,TRUE)}}" onmouseover="javascript:this.className='menuq_up';" onmouseout="javascript:this.className='menuq';" class="menuq" />
+                                    <form method="post" action="{$action}">
+                                        <input type="submit" value="{$exit}" onmouseover="javascript:this.className='menuq_up';" onmouseout="javascript:this.className='menuq';" class="menuq" />
                                     </form>
                                 </td>
                             </tr>
@@ -41,9 +42,9 @@ foreach(array(_strlan_(LAN_MENU1,TRUE)=>0,_strlan_(LAN_MENU2,TRUE)=>1,_strlan_(L
                 </tr>
                 <tr>
                     <td class="conteiner">
-                        <p class="header">{{_strlan_(LAN_HEADER,FALSE,$par__id,_strdate_($aux__now,"d"),date("G:i",$aux__now),_strdate_($aux__now,"w"))}}</p>
-                        {{eval("_panel".$par__panel."_();");}}
-                        <p class="top"><a href="javascript:scroll(0,0);">{{_strlan_(LAN_TOP,TRUE)}}</a></p>
+                        <p class="header">{$header}</p>
+                        {$content}
+                        <p class="top"><a href="javascript:scroll(0,0);">{$top}</a></p>
                     </td>
                 </tr>
             </table>
