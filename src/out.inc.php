@@ -40,7 +40,7 @@
  * Modulo importato per la stampa del contatore.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
+ *  @version v 5.1
  *  @copyright Copyright 2017 Luca Liscio
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
