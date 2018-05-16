@@ -5,18 +5,18 @@
   	"homepage": "https://lucliscio.github.io/fankounter",
   	"main": "src/stats.php",
   	"scripts": {
-    	"start": "php ./src/stats.php"
+    		"start": "php ./src/stats.php"
   	},
   	"dependencies": {},
   	"engines": {
-    	"php": ">=5.3.*"
+    		"php": ">=5.3.*"
  	},
   	"repository": {
-    	"type": "git",
-    	"url": "https://github.com/lucliscio/fanKounter"
+    		"type": "git",
+    		"url": "https://github.com/lucliscio/fanKounter"
   	},
   	"bugs": {
-    	"url": "https://github.com/lucliscio/fanKounter/issues"
+    		"url": "https://github.com/lucliscio/fanKounter/issues"
   	},
   	"keywords": [
   		"hit counter", 
@@ -28,7 +28,7 @@
   	],
   	"author": "Luca Liscio (LucLiscio)",
   	"contributors": [
-    	"Luca Liscio <lucliscio@h0model.org> (https://lucliscio.github.io)"
+    		"Luca Liscio <lucliscio@h0model.org> (https://lucliscio.github.io)"
   	],
   	"license": "GNU AGPL-3.0+"  	
 }
