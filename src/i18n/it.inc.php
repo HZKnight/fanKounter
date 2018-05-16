@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2017 Luca Liscio
+ * Copyright (C) 2018 Luca Liscio
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -37,11 +37,11 @@
  */
 
 /**
- * Modulo importato per la definizione di stringhe di testo.
+ * Modulo importato per la definizione di stringhe di testo in italiano.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
- *  @copyright Copyright 2017 Luca Liscio
+ *  @version v 5.0.1
+ *  @copyright Copyright 2018 Luca Liscio
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -60,8 +60,8 @@ define("LAN_TODAY","OGGI");
 define("LAN_TOTAL","TOTALE");
 
 // Calendario
-define("LAN_MONTHS","gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre");
-define("LAN_DAYS","luned&igrave;,marted&igrave;,mercoled&igrave;,gioved&igrave;,venerd&igrave;,sabato,domenica");
+define("LAN_MONTHS","Gennaio,Febbraio,Marzo,Aprile,Maggio,Giugno,Luglio,Agosto,Settembre,Ottobre,Novembre,Dicembre");
+define("LAN_DAYS","Luned&igrave;,Marted&igrave;,Mercoled&igrave;,Gioved&igrave;,Venerd&igrave;,Sabato,Domenica");
 
 // Titoli della pagina
 define("LAN_TITLE1","fanKounter :: Statistiche");
@@ -71,7 +71,7 @@ define("LAN_TITLE2","fanKounter :: Statistiche per «%s»");
 define("LAN_MASK1","Seleziona un contatore:");
 define("LAN_MASK2","Inserisci la password:");
 
-// Bottoni del men�
+// Bottoni del menù
 define("LAN_MENU1","SOMMARIO");
 define("LAN_MENU2","ULTIMI ACCESSI");
 define("LAN_MENU3","LOCAZIONI");

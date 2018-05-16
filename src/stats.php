@@ -63,7 +63,7 @@ require("sys.inc.php");
 require("cnf.inc.php");
 require("dic.inc.php");
 require("cal.inc.php");
-require("lan.inc.php");
+require("i18n/".LANG.".inc.php");
 
 ############################################################################################
 # INIZIALIZZAZIONE DELLE LIBRERIE

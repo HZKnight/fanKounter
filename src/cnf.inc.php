@@ -76,6 +76,9 @@ define("NOW", time());
 // Carattere di fine linea per i file: Win usa "\r\n", Unix usa "\n", Mac usa "\r"
 define("EOL", "\r\n");
 
+// Lingua di default: it => italiano, en => inglese
+define("LANG", "it");
+
 ############################################################################################
 # IMPOSTAZIONI DI INTEGRITA'
 ############################################################################################
@@ -140,6 +143,7 @@ $cnf__last_entries = 15;
 // Impostazioni del visualizzatore
 $cnf__passwd_protect = FALSE;
 $cnf__limit_view = 15;
+$cnf__lang = "it" //it => italiano, en => inglese
 
 ############################################################################################
 

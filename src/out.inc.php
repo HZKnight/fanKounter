@@ -78,7 +78,8 @@ header("Pragma: no-cache");
 ############################################################################################
 
 if($par__mode==="graphic"){
- if(file_exists("lan.inc.php")){require_once("lan.inc.php");}
+ $lan_file = "i18n/".LANG.".inc.php";   
+ if(file_exists($lan_file)){require_once($lan_file);}
  if(!defined("LAN_TODAY"))define("LAN_TODAY","OGGI");
  if(!defined("LAN_TOTAL"))define("LAN_TOTAL","TOTALE");
 

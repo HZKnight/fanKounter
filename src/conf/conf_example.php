@@ -85,6 +85,7 @@ $cnf__last_entries        = 15;
 $cnf__userpass       = md5("admin");
 $cnf__passwd_protect = TRUE;
 $cnf__limit_view     = 15;
+$cnf__lang = "it" //it => italiano, en => inglese
 
 ############################################################################################
 
