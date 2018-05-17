@@ -1,6 +1,6 @@
 {
 	"name": "FanKounter",
-  	"version": "5.1.0 alfa",
+  	"version": "5.1-unstable.5",
   	"description": "It's a free PHP counter originally developed by FanatiKo",
   	"homepage": "https://lucliscio.github.io/fankounter",
   	"main": "src/stats.php",
@@ -30,5 +30,5 @@
   	"contributors": [
     		"Luca Liscio <lucliscio@h0model.org> (https://lucliscio.github.io)"
   	],
-  	"license": "GNU AGPL-3.0+"  	
+  	"license": "AGPL-3.0-or-later"  	
 }
