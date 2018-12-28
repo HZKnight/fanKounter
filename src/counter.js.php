@@ -53,7 +53,7 @@
 # CONFIGURAZIONE
 ############################################################################################
 
-// define("SCRIPT_PATH","http://www.domain.com/path/");
+//define("SCRIPT_PATH","http://www.domain.com/path/");
 
 ############################################################################################
 # IMPOSTAZIONI DI ESECUZIONE
