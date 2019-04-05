@@ -2,7 +2,7 @@
 	"name" : "lucliscio/fankounter",
 	"type" : "application",
 	"description" : "It's a free PHP counter originally developed by FanatiKo ",
-	"version" : "5.1-unstable.5",
+	"version" : "5.1-unstable.6",
 	"keywords" : [
 		"hit counter",
 		"php",

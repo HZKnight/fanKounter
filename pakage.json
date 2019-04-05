@@ -1,6 +1,6 @@
 {
 	"name": "FanKounter",
-  	"version": "5.1-unstable.5",
+  	"version": "5.1-unstable.6",
   	"description": "It's a free PHP counter originally developed by FanatiKo",
   	"homepage": "https://lucliscio.github.io/fankounter",
   	"main": "src/stats.php",

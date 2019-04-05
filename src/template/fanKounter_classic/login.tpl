@@ -35,8 +35,8 @@
  						</form>
  					</div>
  					<p class="credits">
- 						&copy;2018 HZKnight | &copy;2002 fanatiko
- 						<br/><a href="{$homepage}">fanKounter</a> a Free PHP Script
+ 						&copy;2019 HZKnight | &copy;2002 fanatiko
+ 						<br/><a href="{$homepage}">fanKounter</a> a HZKinght Free PHP Script
  					</p>
  					<script type="text/javascript" language="javascript">
  						try{
