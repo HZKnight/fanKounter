@@ -1,7 +1,8 @@
-![#fanKounter](/src/img/fankounter2.0.png)
+![#fanKounter](/src/img/fankounter2.0.png) 
 
-[![release](http://github-release-version.herokuapp.com/github/lucliscio/fanKounter/release.svg?style=flat)](https://github.com/lucliscio/fanKounter/releases/latest)
-[![License](https://poser.pugx.org/lucliscio/fankounter/license)](https://packagist.org/packages/lucliscio/fankounter)
+>![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg) 
+![Licence](https://img.shields.io/github/license/lucliscio/fanKounter.svg)
+
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
