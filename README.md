@@ -1,8 +1,8 @@
 ![#fanKounter](/src/img/fankounter2.0.png) 
 
->![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg) 
+![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg) 
 ![Licence](https://img.shields.io/github/license/lucliscio/fanKounter.svg)
-
+![Issue](https://img.shields.io/github/issues/lucliscio/fanKounter.svg)
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
