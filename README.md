@@ -1,6 +1,7 @@
 ![#fanKounter](/src/img/fankounter2.0.png) 
 
 ![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg) 
+![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)
 ![Licence](https://img.shields.io/github/license/lucliscio/fanKounter.svg)
 ![Issue](https://img.shields.io/github/issues/lucliscio/fanKounter.svg)
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
