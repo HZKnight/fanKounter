@@ -1,7 +1,7 @@
 <?php 
 /* 
  * counter.php
- *                                       __                      PHP Script    _    vs 5.0
+ *                                       __                      PHP Script    _    vs 5.1
  *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
  *                                     | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -40,8 +40,8 @@
  * Modulo motore per la rilevazione, l'elaborazione e la memorizzazione dei dati statistici.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
- *  @copyright Copyright 2017 Luca Liscio
+ *  @version v 5.1
+ *  @copyright Copyright 2018 Luca Liscio
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -49,8 +49,18 @@
  *  @filesource
  */
 
+//ini_set('memory_limit', '-1');
+
 ############################################################################################
-# INCLUSIONE DEI MODULI
+# INCLUSIONE DELLE LIBRERIE
+############################################################################################
+
+require("libs/Browscap.php");	
+
+use phpbrowscap\Browscap;
+
+############################################################################################
+# INCLUSIONE DEI MODULI E DEFINIZIONE DELLE FUNZIONI BASE
 ############################################################################################
 
 define("STANDALONE",FALSE);
@@ -61,6 +71,23 @@ require("cnf.inc.php");
 require("dic.inc.php");
 require("url.inc.php");
 require("cal.inc.php");
+
+//Funzione per ottenere l'ip reale del client
+function getUserIP() {
+    $client  = @$_SERVER['HTTP_CLIENT_IP'];
+    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+    $remote  = $_SERVER['REMOTE_ADDR'];
+
+    if(filter_var($client, FILTER_VALIDATE_IP)){
+        $ip = $client;
+    } else if(filter_var($forward, FILTER_VALIDATE_IP)){
+        $ip = $forward;
+    } else {
+        $ip = $remote;
+    }
+
+    return $ip;
+}
 
 ############################################################################################
 # CREAZIONE DELLE CARTELLE DI LAVORO
@@ -106,12 +133,17 @@ settype($cnf__last_entries,"integer");
 ############################################################################################
 
 $aux__now=NOW+$cnf__htime_sync_server*3600;
-$aux__ip=(array_key_exists("HTTP_CLIENT_IP",$_SERVER))?$_SERVER["HTTP_CLIENT_IP"]:((array_key_exists("REMOTE_ADDR",$_SERVER))?$_SERVER["REMOTE_ADDR"]:FALSE);
+//$aux__ip=(array_key_exists("HTTP_CLIENT_IP",$_SERVER))?$_SERVER["HTTP_CLIENT_IP"]:((array_key_exists("REMOTE_ADDR",$_SERVER))?$_SERVER["REMOTE_ADDR"]:FALSE);
+$aux__ip=getUserIP();
 $aux__ip=(preg_match("/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/",$aux__ip))?$aux__ip:FALSE;
 $aux__agent=(array_key_exists("HTTP_USER_AGENT",$_SERVER))?$_SERVER["HTTP_USER_AGENT"]:FALSE;
 $aux__location=new URL((array_key_exists("HTTP_REFERER",$_SERVER))?$_SERVER["HTTP_REFERER"]:FALSE);
 $aux__referrer=new Referrer($par__referrer);
 $aux__calendar=new Calendar;
+$aux__browscap=new Browscap('./temp/cache/');
+$aux__browscap->doAutoUpdate = false; //Disattiva l'aggiornamento automatico della cache
+$aux__bcap = $aux__browscap->getBrowser(null, true);
+
 
 $dat__counter=($cnf__start_count<0)?0:$cnf__start_count;
 $dat__started=array("timestamp"=>$aux__now,"counter"=>($cnf__start_count<0)?0:$cnf__start_count);
@@ -192,8 +224,8 @@ if(_licit_ip_())
     $dat__entry[$dat__counter]["ts"]=$aux__now;
     $dat__entry[$dat__counter]["ip"]=$aux__ip;
     $dat__entry[$dat__counter]["host"]=$__host;
-    $dat__entry[$dat__counter]["age"]=_infosys_($aux__agent,$inf__browser);
-    $dat__entry[$dat__counter]["os"]=_infosys_($aux__agent,$inf__os);
+    $dat__entry[$dat__counter]["age"]=$aux__bcap["Parent"]; //_infosys_($aux__agent,$inf__browser);
+    $dat__entry[$dat__counter]["os"]=$aux__bcap["Platform_Description"]; //_infosys_($aux__agent,$inf__os);
     $dat__entry[$dat__counter]["loc"]=$aux__location->_normalize_();
 
     if($aux__referrer->_is_engine_()){

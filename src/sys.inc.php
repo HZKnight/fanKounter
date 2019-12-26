@@ -1,7 +1,7 @@
 <?php 
 /* 
  * sys.inc.php
- *                                       __                      PHP Script    _    vs 5.0
+ *                                       __                      PHP Script    _    vs 5.1
  *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
  *                                     | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2017 Luca Liscio
+ * Copyright (C) 2018 Luca Liscio
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -40,8 +40,8 @@
  * Modulo importato per gestire operazioni comuni su file e cartelle.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
- *  @copyright Copyright 2017 Luca Liscio
+ *  @version v 5.1
+ *  @copyright Copyright 2018 Luca Liscio
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -50,8 +50,10 @@
  */
 
 ############################################################################################
-# VARIABILI LOCALI
+# COSTANTI E VARIABILI LOCALI
 ############################################################################################
+
+define("WEB_ROOT", getcwd()."/");
 
 $__lock_fid=FALSE;
 
@@ -60,144 +62,148 @@ $__lock_fid=FALSE;
 ############################################################################################
 
 function _mkdir_($__name,$__mode=0777){
- settype($__name,"string");
+  settype($__name,"string");
 
- clearstatcache();
-
- if(is_dir($__name))
-  return;
- elseif(mkdir($__name,$__mode)){
   clearstatcache();
 
   if(is_dir($__name))
-   return;
- }
+    return;
+  elseif(mkdir($__name,$__mode)){
+    clearstatcache();
 
- exit("System Error: _mkdir_(".$__name.",".$__mode.").");
+  if(is_dir($__name))
+   return;
+  }
+
+  exit("System Error: _mkdir_(".$__name.",".$__mode.").");
 }
 
 function _fdel_($__name){
- settype($__name,"string");
+  settype($__name,"string");
 
- clearstatcache();
-
- if(!file_exists($__name))
-  return;
- elseif(unlink($__name)){
   clearstatcache();
 
-  if(!file_exists($__name))
-   return;
- }
+  if(!file_exists(WEB_ROOT.$__name))
+    return;
+  elseif(unlink(WEB_ROOT.$__name)){
+    clearstatcache();
 
- exit("System Error: _fdel_(".$__name.").");
+    if(!file_exists(WEB_ROOT.$__name))
+      return;
+  }
+
+  if(!is_writable(WEB_ROOT.$__name)){
+    exit("System Error: _fdel_(".WEB_ROOT.$__name."). File not writable");
+  }
+  exit("System Error: _fdel_(".WEB_ROOT.$__name.").");
 }
 
 function _fcopy_($__source,$__target){
- settype($__source,"string");
- settype($__target,"string");
+  settype($__source,"string");
+  settype($__target,"string");
 
- clearstatcache();
-
- if(!file_exists($__source))
-  return;
- elseif(copy($__source,$__target)){
   clearstatcache();
 
-  if(file_exists($__target))
-   if(file_get_contents($__target)===file_get_contents($__source))
+  if(!file_exists(WEB_ROOT.$__source))
     return;
- }
+  elseif(copy(WEB_ROOT.$__source, WEB_ROOT.$__target)){
+    clearstatcache();
 
- _fdel_($__target);
- exit("System Error: _fcopy_(".$__source.",".$__target.").");
+    if(file_exists(WEB_ROOT.$__target))
+      if(file_get_contents(WEB_ROOT.$__target) === file_get_contents(WEB_ROOT.$__source))
+        return;
+  }
+
+  _fdel_($__target);
+  exit("System Error: _fcopy_(".WEB_ROOT.$__source.",".WEB_ROOT.$__target.").");
 }
 
 function _fcreate_($__name,$__content){
- settype($__name,"string");
- settype($__content,"string");
+  settype($__name,"string");
+  settype($__content,"string");
 
- if(($__fid=fopen($__name,"wb"))!==FALSE){
-  if(fwrite($__fid,$__content)===strlen($__content)){
-   fflush($__fid);
-   fclose($__fid);
-   clearstatcache();
+  if(($__fid=fopen(WEB_ROOT.$__name,"wb"))!==FALSE){
+    if(fwrite($__fid,$__content)===strlen($__content)){
+      fflush($__fid);
+      fclose($__fid);
+      clearstatcache();
 
-   if(file_exists($__name))
-    if(file_get_contents($__name)===$__content)
-     return;
+    if(file_exists(WEB_ROOT.$__name))
+      if(file_get_contents(WEB_ROOT.$__name)===$__content)
+        return;
+    }
+
+    @fclose($__fid);
   }
 
-  @fclose($__fid);
- }
-
- _fdel_($__name);
- exit("System Error: _fcreate_(".$__name.",...).");
+  _fdel_($__name);
+  exit("System Error: _fcreate_(".WEB_ROOT.$__name.",...).");
 }
 
 function _flock_(){
- global $par__id;
- global $__lock_fid;
+  global $par__id;
+  global $__lock_fid;
 
- if(FLOCK){
-  if(($__lock_fid=fopen(TEMP_FOLDER._filename_(FLOCK_FILES,$par__id),"ab"))!==FALSE)
-   if(flock($__lock_fid,LOCK_EX))
-    return;
+  if(FLOCK){
+    if(($__lock_fid=fopen(TEMP_FOLDER._filename_(FLOCK_FILES,$par__id),"ab"))!==FALSE)
+    if(flock($__lock_fid,LOCK_EX))
+      return;
 
-  @fclose($__lock_fid);
-  exit("System Error: _flock_().");
- }
+    @fclose($__lock_fid);
+    exit("System Error: _flock_().");
+  }
 
- return;
+  return;
 }
 
 function _funlock_(){
- global $__lock_fid;
+  global $__lock_fid;
 
- if(FLOCK){
-  flock($__lock_fid,LOCK_UN);
-  fclose($__lock_fid);
- }
+  if(FLOCK){
+    flock($__lock_fid,LOCK_UN);
+    fclose($__lock_fid);
+  }
 
- return;
+  return;
 }
 
 function _ls_($__dir="./",$__pattern="*.*"){
- settype($__dir,"string");
- settype($__pattern,"string");
+  settype($__dir,"string");
+  settype($__pattern,"string");
 
- clearstatcache();
+  clearstatcache();
 
- $__ls=array();
- $__regexp=preg_replace("/\\x5C\\x3F/",".",preg_replace("/\\x5C\\x2A/",".*",preg_quote($__pattern,"/")));
+  $__ls=array();
+  $__regexp=preg_replace("/\\x5C\\x3F/",".",preg_replace("/\\x5C\\x2A/",".*",preg_quote($__pattern,"/")));
 
- if(!is_dir($__dir))
-  return $__ls;
- elseif(($__dir_id=opendir($__dir))!==FALSE){
-  while(($__file=readdir($__dir_id))!==FALSE)
-   if(preg_match("/^".$__regexp."$/",$__file))
-    array_push($__ls,$__file);
+  if(!is_dir(WEB_ROOT.$__dir))
+    return $__ls;
+  elseif(($__dir_id=opendir(WEB_ROOT.$__dir))!==FALSE){
+    while(($__file=readdir($__dir_id))!==FALSE)
+    
+    if(preg_match("/^".$__regexp."$/",$__file))
+      array_push($__ls,$__file);
 
-  closedir($__dir_id);
-  sort($__ls,SORT_STRING);
-  return $__ls;
- }
+    closedir($__dir_id);
+    sort($__ls,SORT_STRING);
+    return $__ls;
+  }
 
- exit("System Error: _ls_(".$__dir.",".$__pattern.").");
+  exit("System Error: _ls_(".WEB_ROOT.$__dir.",".$__pattern.").");
 }
 
 function _filename_($__template,$__replace){
- settype($__template,"string");
- settype($__replace,"string");
+  settype($__template,"string");
+  settype($__replace,"string");
 
- return preg_replace("/\\x2A/",$__replace,$__template);
+  return preg_replace("/\\x2A/",$__replace,$__template);
 }
 
 function _filesize_($__name){
- settype($__name,"string");
+  settype($__name,"string");
 
- clearstatcache();
- return((file_exists($__name))?round(filesize($__name)/1024,1):0);
+  clearstatcache();
+  return((file_exists(WEB_ROOT.$__name))?round(filesize(WEB_ROOT.$__name)/1024,1):0);
 }
 
 ############################################################################################

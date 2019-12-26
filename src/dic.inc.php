@@ -151,7 +151,7 @@ $inf__engine = array(
 # CHIAVI DI RICERCA
 ############################################################################################
 
-define("KEYLEN", 3);
+define("KEYLEN", 2);
 
 $inf__keyban = array(
  "gli",

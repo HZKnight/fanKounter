@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2017 Luca Liscio
+ * Copyright (C) 2019 Luca Liscio
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -40,8 +40,8 @@
  * Modulo importato per la gestione di URL, referrer e motori di ricerca.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
- *  @copyright Copyright 2017 Luca Liscio
+ *  @version v 5.1
+ *  @copyright Copyright 2019 Luca Liscio
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -157,25 +157,28 @@ class Referrer extends URL{
 
   parent::URL($__url);
 
-  if($this->__url_v!==FALSE)
-   foreach($inf__engine as $__name=>$__param)
-    if(preg_match("/\.(".preg_quote($__name,"/")."\..+)$/i",$this->__url_v["host"],$__res)){
-     $this->__engine_name=strtolower($__res[1]);
+  if($this->__url_v!==FALSE){
+    foreach($inf__engine as $__name=>$__param){
+      if(preg_match("/\.(".preg_quote($__name,"/")."\..+)$/i",$this->__url_v["host"],$__res)){
+        $this->__engine_name=strtolower($__res[1]);
+        if(preg_match("/[?&]".$__param."=([^&]+)(&|$)/i",$this->__url_v["para"],$__res)){
+          $this->__engine_keys_v=explode(" ",strtolower(trim(preg_replace("/\s{2,}/"," ",preg_replace("/[^\w\d\s]/"," ",$__res[2])))));
+          
+          foreach($this->__engine_keys_v as $__index=>$__enkey){
+            if(strlen($__enkey)<KEYLEN){
+              unset($this->__engine_keys_v[$__index]);
+            }
+          }
 
-     if(preg_match("/[?&]".$__param."=([^&]+)(&|$)/i",$this->__url_v["para"],$__res)){
-      $this->__engine_keys_v=explode(" ",strtolower(trim(preg_replace("/\s{2,}/"," ",preg_replace("/[^\w\d\s]/"," ",$__res[2])))));
+          $this->__engine_keys_v=array_diff(array_unique($this->__engine_keys_v),$inf__keyban);
+          sort($this->__engine_keys_v,SORT_STRING);
 
-      foreach($this->__engine_keys_v as $__index=>$__enkey)
-       if(strlen($__enkey)<KEYLEN)
-        unset($this->__engine_keys_v[$__index]);
-
-      $this->__engine_keys_v=array_diff(array_unique($this->__engine_keys_v),$inf__keyban);
-      sort($this->__engine_keys_v,SORT_STRING);
-
-      if(count($this->__engine_keys_v)>0)
-       return;
-     }
+          if(count($this->__engine_keys_v)>0)
+          return;
+        }
+      }
     }
+  }
 
   $this->__engine_name=FALSE;
   $this->__engine_keys_v=FALSE;
