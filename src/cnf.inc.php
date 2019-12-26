@@ -46,8 +46,8 @@
  * TROVANO NELL'ULTIMO PARAGRAFO SULLA 'CONFIGURAZIONE DEFAULT PER UN CONTATORE'.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
- *  @copyright Copyright 2017 Luca Liscio
+ *  @version v 5.1
+ *  @copyright Copyright 2019 HZKinght
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -115,7 +115,7 @@ define("FLOCK_FILES", "lock_*.tmp");
 # CREDITS
 ############################################################################################
 
-define("HOMEPAGE", "https://lucliscio.github.io/fanKounter");
+define("HOMEPAGE", "https://fankounter.hzknight.org/");
 define("EMAIL", "lucliscio@h0model.org");
 define("VERSION", "5.1.0-unstable.6");
 

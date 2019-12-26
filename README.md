@@ -1,7 +1,9 @@
-![#fasnKounter](/src/img/fk_newlogo.png)
+![#fanKounter](/src/img/fankounter2.0.png) 
 
-[![release](http://github-release-version.herokuapp.com/github/lucliscio/fanKounter/release.svg?style=flat)](https://github.com/lucliscio/fanKounter/releases/latest)
-[![License](https://poser.pugx.org/lucliscio/fankounter/license)](https://packagist.org/packages/lucliscio/fankounter)
+[![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg)](https://github.com/lucliscio/fanKounter/releases/latest) 
+[![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/5.1-unstable.6)
+![Licence](https://img.shields.io/github/license/lucliscio/fanKounter.svg)
+![Issue](https://img.shields.io/github/issues/lucliscio/fanKounter.svg)
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
@@ -26,7 +28,7 @@ La creazione di una nuova istanza di contatore può avvenire in modo automatico,
 ## Requisiti
 Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - PHP: >= 5.* 
-	- **N.B.**: Testato fino a PHP 7.2.2 
+	- **N.B.**: Testato fino a PHP 7.3.9 
 - Libreria GD come estensione al PHP: opzionale, o versione 2.0 e successive
 - Host server - Sistema operativo e server HTTP: qualunque
 - Utente - Sistema operativo e browser: qualunque
