@@ -1,7 +1,7 @@
 <?php 
 /* 
  * url.inc.php
- *                                       __                      PHP Script    _    vs 5.0
+ *                                       __       HZKnight free PHP Scripts    _    vs 5.1
  *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
  *                                     | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -41,7 +41,7 @@
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
  *  @version v 5.1
- *  @copyright Copyright 2019 Luca Liscio
+ *  @copyright Copyright 2020 Luca Liscio
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -158,7 +158,7 @@ class Referrer extends URL{
   parent::URL($__url);
 
   if($this->__url_v!==FALSE){
-    foreach($inf__engine as $__name=>$__param){
+    foreach($inf__engine as $__name=>$__param){      
       if(preg_match("/\.(".preg_quote($__name,"/")."\..+)$/i",$this->__url_v["host"],$__res)){
         $this->__engine_name=strtolower($__res[1]);
         if(preg_match("/[?&]".$__param."=([^&]+)(&|$)/i",$this->__url_v["para"],$__res)){
@@ -175,7 +175,8 @@ class Referrer extends URL{
 
           if(count($this->__engine_keys_v)>0)
           return;
-        }
+        } 
+        return;
       }
     }
   }

@@ -2,7 +2,9 @@
     include "../src/dic.inc.php";
     include "../src/url.inc.php";
 
-    $url = "https://www.google.com/search?q=h0model&sxsrf=ACYBGNTox5WuEQywaX94AlUmon346uD5Yw:1577393984018&source=lnms&tbm=isch&sa=X&ved=2ahUKEwix-dnAmtTmAhVF-qQKHdlkBOAQ_AUoAnoECAsQBA&biw=1920&bih=983";
+    $url = "https://it.search.yahoo.com/search?p=h0model&fr=yfp-t&fp=1&toggle=1&cop=mss&ei=UTF-8";
     $out = new Referrer($url);
 
+    echo "Server: ".$_SERVER['SERVER_SOFTWARE']."<br/><br/><pre>";
     echo var_dump($out);
+    echo "</pre>";
