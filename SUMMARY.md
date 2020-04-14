@@ -1,5 +1,5 @@
 # Table of contents
 
-* [Description](README.md)
-* [LICENCE](licence.md)
+* [Initial page](README.md)
+* [Untitled](untitled.md)
 
