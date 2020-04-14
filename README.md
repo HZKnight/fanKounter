@@ -1,5 +1,3 @@
-![#fasnKounter](/fk_nover.png)
-
 [![release](http://github-release-version.herokuapp.com/github/lucliscio/fanKounter/release.svg?style=flat)](https://github.com/lucliscio/fanKounter/releases/latest)
 [![License](https://poser.pugx.org/lucliscio/fankounter/license)](https://packagist.org/packages/lucliscio/fankounter)
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
