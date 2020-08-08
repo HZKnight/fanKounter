@@ -1,4 +1,4 @@
-![#fanKounter](/src/img/fankounter2.0.png) 
+![#fanKounter](https://fankounter.hzknight.org/assets/images/fankounter2.0.png) 
 
 [![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg)](https://github.com/lucliscio/fanKounter/releases/latest) 
 [![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/5.1-unstable.6)
