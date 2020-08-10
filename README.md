@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Initial page
-
-=======
-![#fasnKounter](/fk_nover.png)
+![#fasnKounter](https://fankounter.hzknight.org/assets/images/fankounter2.0.png)
 
 [![release](http://github-release-version.herokuapp.com/github/lucliscio/fanKounter/release.svg?style=flat)](https://github.com/lucliscio/fanKounter/releases/latest)
 [![License](https://poser.pugx.org/lucliscio/fankounter/license)](https://packagist.org/packages/lucliscio/fankounter)
@@ -34,4 +30,3 @@ Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - Libreria GD come estensione al PHP: opzionale, o versione 2.0 e successive
 - Host server - Sistema operativo e server HTTP: qualunque
 - Utente - Sistema operativo e browser: qualunque
->>>>>>> parent of 3fcfbb7... GitBook: [master] 6 pages modified
