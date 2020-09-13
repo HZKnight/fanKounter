@@ -1,9 +1,9 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
- <!-- fanKounter v {$version} - by LucLiscio (Italy) //-->
- <!-- {$homepage} //-->
- <!-- mailto:{$email} //-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- fanKounter v {$version} - by LucLiscio (Italy) //-->
+<!-- {$homepage} //-->
+<!-- mailto:{$email} //-->
  
- <html>
+<html>
  	<head>
 		<title>{$title}</title>
  		<meta name="description" content="fanKounter: uno script in PHP per creare e gestire contatori di visite con statistiche per pagine WEB" />
@@ -17,7 +17,7 @@
  			<tr>
  				<td align="center">
 					<div class="mask">
-						<img src="../../img/fk_newlogo.png" style="width:200px"><br/><br/>
+						<img src="../../img/fankounter3.0.png" style="width:200px"><br/><br/>
  						<form method="post" action="{$action}">
 	 						<p>{$contatore}</p>
 	 						<p>
@@ -35,9 +35,9 @@
  						</form>
  					</div>
  					<p class="credits">
- 						&copy;2019 HZKnight | &copy;2002 fanatiko
- 						<br/><a href="{$homepage}">fanKounter</a> a HZKinght Free PHP Script
- 					</p>
+						&copy;2020 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
+						<br/><a href="{$homepage}">fanKounter</a> a HZKnight Free PHP Script
+					</p>
  					<script type="text/javascript" language="javascript">
  						try{
  							document.forms[0].passwd.focus();

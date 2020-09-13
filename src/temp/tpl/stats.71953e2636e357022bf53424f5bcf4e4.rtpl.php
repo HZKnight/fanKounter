@@ -14,7 +14,7 @@
     </head>
     <body>
         <div align="center">
-            <img src="template/fanKounter_classic/../../img/fk_newlogo.png" style="width:200px"><br/><br/>
+            <img src="template/fanKounter_classic/../../img/fankounter3.0.png" style="width:200px"><br/><br/>
             <table cellspacing="0" cellpadding="0" class="conteiner">
                 <tr>
                     <td align="center">
@@ -49,8 +49,8 @@
                 </tr>
             </table>
             <p class="credits">
-                &copy;2017 HZKnight | &copy;2002 fanatiko
-                <br/><a href="<?php echo $homepage;?>">fanKounter</a> a Free PHP Script
+                &copy;2020 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
+                <br/><a href="<?php echo $homepage;?>">fanKounter</a> a HZKnight Free PHP Script
             </p>
         </div>
     </body>

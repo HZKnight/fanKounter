@@ -1,7 +1,7 @@
 <?php 
 /* 
  * lan.inc.php
- *                                       __                      PHP Script    _    vs 5.0
+ *                                       __                      PHP Script    _    vs 5.1
  *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
  *                                     | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2018 Luca Liscio
+ * Copyright (C) 2020 Luca Liscio
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -40,8 +40,8 @@
  * Modulo importato per la definizione di stringhe di testo in inglese.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0.1
- *  @copyright Copyright 2018 Luca Liscio
+ *  @version v 5.0.3
+ *  @copyright Copyright 2020 Luca Liscio
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -124,6 +124,8 @@ define("LAN025","Language version [hi]PHP[/hi]: [count]%s[/count]");
 define("LAN026","Library version [hi]GD[/hi]: [count]%s[/count]");
 define("LAN027","Library version [hi]GD[/hi]: not available");
 define("LAN028","Script version [hi]fanKounter[/hi]: [count]%s[/count]");
+define("LAN029","Library version [hi]Browscap[/hi]: [count]%s[/count]");
+define("LAN030","Databse version [hi]Browscap[/hi]: [count]%s[/count]");
 
 // Pannello degli ultimi accessi
 define("LAN101","Detail of the Last [count]%s[/count] Access");

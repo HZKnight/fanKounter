@@ -7,7 +7,7 @@
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
  *                                     |_|  \__,_|_| |_\/  \/\___/ \__,_|_| |_|\__\___|_|
  *
- *                                             lucliscio <lucliscio@h0model.org>, ITALY
+ *                                           lucliscio <lucliscio@h0model.org>, ITALY
  *
  * -------------------------------------------------------------------------------------------
  * Documentazione di riferimento
@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2019 Luca Liscio
+ * Copyright (C) 2020 Luca Liscio
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by

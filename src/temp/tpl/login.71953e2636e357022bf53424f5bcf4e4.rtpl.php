@@ -1,9 +1,9 @@
-<?php if(!class_exists('raintpl')){exit;}?> <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
- <!-- fanKounter v <?php echo $version;?> - by LucLiscio (Italy) //-->
- <!-- <?php echo $homepage;?> //-->
- <!-- mailto:<?php echo $email;?> //-->
+<?php if(!class_exists('raintpl')){exit;}?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- fanKounter v <?php echo $version;?> - by LucLiscio (Italy) //-->
+<!-- <?php echo $homepage;?> //-->
+<!-- mailto:<?php echo $email;?> //-->
  
- <html>
+<html>
  	<head>
 		<title><?php echo $title;?></title>
  		<meta name="description" content="fanKounter: uno script in PHP per creare e gestire contatori di visite con statistiche per pagine WEB" />
@@ -17,7 +17,7 @@
  			<tr>
  				<td align="center">
 					<div class="mask">
-						<img src="template/fanKounter_classic/../../img/fk_newlogo.png" style="width:200px"><br/><br/>
+						<img src="template/fanKounter_classic/../../img/fankounter3.0.png" style="width:200px"><br/><br/>
  						<form method="post" action="<?php echo $action;?>">
 	 						<p><?php echo $contatore;?></p>
 	 						<p>
@@ -35,9 +35,9 @@
  						</form>
  					</div>
  					<p class="credits">
- 						&copy;2018 HZKnight | &copy;2002 fanatiko
- 						<br/><a href="<?php echo $homepage;?>">fanKounter</a> a Free PHP Script
- 					</p>
+						&copy;2020 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
+						<br/><a href="<?php echo $homepage;?>">fanKounter</a> a HZKnight Free PHP Script
+					</p>
  					<script type="text/javascript" language="javascript">
  						try{
  							document.forms[0].passwd.focus();

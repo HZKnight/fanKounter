@@ -7,7 +7,7 @@
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
  *                                     |_|  \__,_|_| |_\/  \/\___/ \__,_|_| |_|\__\___|_|
  *
- *                                             lucliscio <lucliscio@h0model.org>, ITALY
+ *                                           lucliscio <lucliscio@h0model.org>, ITALY
  *
  * -------------------------------------------------------------------------------------------
  * Documentazione di riferimento
@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2018 Luca Liscio
+ * Copyright (C) 2020 Luca Liscio
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -53,6 +53,7 @@
 ############################################################################################
 
 require("libs/rain.tpl.class.php");
+require("temp/cache/cache.php");	//leggo la verisione di browscap
 
 ############################################################################################
 # INCLUSIONE DEI MODULI
@@ -235,6 +236,7 @@ function _panel0_(){
     global $cnf__mtime_unique_accs,$cnf__expire_on_midnight,$cnf__count_per_pages;
     global $dat__counter,$dat__started;
     global $aux__now,$aux__calendar;
+    global $source_version, $cache_version;
 
     $__max4d=$aux__calendar->_max_hits_in_date_();
     $__max4m=$aux__calendar->_max_hits_in_month_();
@@ -272,7 +274,9 @@ function _panel0_(){
     echo"<p class=\"title\">"._strlan_(LAN024)."</p>";
     echo"<p class=\"summary\">"._strlan_(LAN025,FALSE,phpversion())."</p>";
     echo"<p class=\"summary\">".(($__gd!==FALSE)?_strlan_(LAN026,FALSE,$__gd["GD Version"]):_strlan_(LAN027))."</p>";
-    echo"<p class=\"summary\">"._strlan_(LAN028,FALSE,VERSION)."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN029,FALSE,$cache_version)."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN030,FALSE,$source_version." - ".date ("d-m-Y H:i:s", filemtime("temp/cache/cache.php")))."</p>";
+    echo"<p class=\"summary\">"._strlan_(LAN028,FALSE,VERSION)."</p>";    
 
     $pcontent = ob_get_contents();
     ob_end_clean();   
@@ -400,7 +404,7 @@ function _panel3_(){
     _graph_($dat__referrer,"url",LAN301,LAN302,LAN303,LAN304,7,2,1,LAN_UNKNOWN_REFERRER,60,TRUE);
     _graph_(_domains_($dat__referrer),"url",LAN305,LAN306,LAN307,LAN308,6,3,1,LAN_UNKNOWN_REFERRER,50,TRUE);
     _graph_($dat__engine,"engine",LAN309,LAN310,LAN311,LAN312,5,4,1,FALSE,40,TRUE);
-    _graph_($dat__enkey,"other",LAN313,LAN314,LAN315,LAN316,5,4,1,FALSE,40,TRUE);
+    /*_graph_($dat__enkey,"other",LAN313,LAN314,LAN315,LAN316,5,4,1,FALSE,40,TRUE);*/
 
     $pcontent = ob_get_contents();
     ob_end_clean();   

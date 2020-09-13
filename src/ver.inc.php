@@ -1,13 +1,13 @@
 <?php 
 /* 
  * ver.inc.php
- *                                       __                      PHP Script    _    vs 5.0
+ *                                       __       HZKnight free PHP Scripts    _    vs 5.1
  *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
  *                                     | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
  *                                     |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
  *                                     |_|  \__,_|_| |_\/  \/\___/ \__,_|_| |_|\__\___|_|
  *
- *                                             lucliscio <lucliscio@h0model.org>, ITALY
+ *                                           lucliscio <lucliscio@h0model.org>, ITALY
  *
  * -------------------------------------------------------------------------------------------
  * Documentazione di riferimento

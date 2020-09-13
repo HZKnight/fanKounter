@@ -11,12 +11,12 @@
 		"visitors counter",
 		"cross plattafor"
 	],
-	"homepage" : "https://lucliscio.github.io/fanKounter",
+	"homepage" : "https://fanKounter.hzknight.org",
 	"license" : "AGPL-3.0-or-later",
 	"authors" : [{
 			"name" : "Luca Liscio",
 			"email" : "lucliscio@h0model.org",
-			"homepage" : "https://lucliscio.github.io",
+			"homepage" : "https://about.me/lucaliscio",
 			"role" : "Developer"
 		}
 	],

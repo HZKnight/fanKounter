@@ -43,7 +43,7 @@ class Browscap
      */
     const VERSION = '2.1.1';
 
-    const CACHE_FILE_VERSION = '2.1.0';
+    const CACHE_FILE_VERSION = '2.1.1';
 
     /**
      * Different ways to access remote and local files.
@@ -104,7 +104,7 @@ class Browscap
      * is MINIMAL, so there is no reason to use the standard file whatsoever. Either go for light,
      * which is blazing fast, or get the full one. (note: light version doesn't work, a fix is on its way)
      */
-    public $remoteIniUrl = 'http://browscap.org/stream?q=Full_PHP_BrowsCapINI';
+    public $remoteIniUrl = 'http://browscap.org/stream?q=PHP_BrowsCapINI';
     public $remoteVerUrl = 'http://browscap.org/version';
     public $timeout = 5;
     public $updateInterval = 432000; // 5 days
