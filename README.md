@@ -28,7 +28,7 @@ La creazione di una nuova istanza di contatore può avvenire in modo automatico,
 ## Requisiti
 Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - PHP: >= 5.* 
-	- **N.B.**: Testato fino a PHP 7.3.9 
+	- **N.B.**: Testato fino a PHP 7.4.3 
 - Libreria GD come estensione al PHP: opzionale, o versione 2.0 e successive
 - Host server - Sistema operativo e server HTTP: qualunque
 - Utente - Sistema operativo e browser: qualunque
