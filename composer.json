@@ -8,7 +8,7 @@
 		"hit counter"
 	],
 	"homepage" : "https://fankounter.hzknight.org",
-	"license" : "GNU AGPL-3.0+",
+	"license" : "AGPL-3.0-or-later",
 	"authors" : [{
 			"name" : "Luca Liscio",
 			"email" : "lucliscio@h0model.org",
