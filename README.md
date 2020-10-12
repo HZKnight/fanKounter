@@ -1,7 +1,7 @@
 ![#fanKounter](https://fankounter.hzknight.org/assets/images/fankounter2.0.png) 
 
 [![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg)](https://github.com/lucliscio/fanKounter/releases/latest) 
-[![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/5.1-unstable.6)
+[![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/5.1-unstable.8)
 ![Licence](https://img.shields.io/github/license/lucliscio/fanKounter.svg)
 ![Issue](https://img.shields.io/github/issues/lucliscio/fanKounter.svg)
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
