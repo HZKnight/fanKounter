@@ -1,5 +1,5 @@
 
-                                        __                      PHP Script    _    vs 5.0
+                                        __       HZKnight free PHP Scripts    _    vs 5.1
                                        / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
                                       | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
                                       |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -19,10 +19,10 @@
 
     manual.txt   La guida alla configurazione, all'installazione e all'uso dello script.
 
-      faqs.txt   Le risposte alle domande più comuni, sui problemi e sulle funzionalità.
+      faqs.txt   Le risposte alle domande piï¿½ comuni, sui problemi e sulle funzionalitï¿½.
 
    history.txt   La progressione delle versioni, i miglioramenti apportati, i bugs
-                 eliminati e la modalità di aggiornamento.
+                 eliminati e la modalitï¿½ di aggiornamento.
 
  Se desideri contattare l'autore, scrivi a: lucliscio <lucliscio@h0model.org>.
- Il nuovo sito ufficiale del fanKounter è: https://lucliscio.github.io/fanKounter/.
+ Il nuovo sito ufficiale del fanKounter ï¿½: https://lucliscio.github.io/fanKounter/.

@@ -1,5 +1,5 @@
 
-                                        __                      PHP Script    _    vs 5.0
+                                        __       HZKnight free PHP Scripts    _    vs 5.1
                                        / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
                                       | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
                                       |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -40,23 +40,23 @@
 
  INFORMAZIONI SULLO SCRIPT                                                               1
  ------------------------------------------------------------------------------------------
- fanKounter è uno script in PHP gratuito, per creare e gestire una quantità indefinita di
+ fanKounter ï¿½ uno script in PHP gratuito, per creare e gestire una quantitï¿½ indefinita di
  contatori (grafici, testuali o invisibili) di accessi alle pagine WEB.
 
- E' indicato per un uso personale (mono-utenza), nel senso che è possibile programmare
+ E' indicato per un uso personale (mono-utenza), nel senso che ï¿½ possibile programmare
  nuovi contatori solo configurandoli manualmente e non attraverso un processo guidato via
  WEB e lo stesso discorso vale per amministrarli. La creazione di una nuova istanza di
- contatore può avvenire anche in modo automatico, non appena se ne faccia richiesta da una
+ contatore puï¿½ avvenire anche in modo automatico, non appena se ne faccia richiesta da una
  pagina WEB ritenuta lecita.
 
  E' possibile monitorare gli accessi per qualunque tipo di pagina (HTML, PHP, etc) ed in
- qualunque locazione del WEB esse sono poste, anche esterne al dominio in cui è installato
- lo script. Per richiamare il contatore da una pagina WEB, è sufficiente includere un
+ qualunque locazione del WEB esse sono poste, anche esterne al dominio in cui ï¿½ installato
+ lo script. Per richiamare il contatore da una pagina WEB, ï¿½ sufficiente includere un
  piccolo file di codice JavaScript auto-generato dal fanKounter.
 
  Ogni istanza di contatore che si crea, funziona in modo indipendente dalle altre. Lo
- script è molto flessibile, altamente personalizzabile e facile da configurare. Si può
- programmare la modalità con cui i reports devono essere acquisiti, definire i tempi di una
+ script ï¿½ molto flessibile, altamente personalizzabile e facile da configurare. Si puï¿½
+ programmare la modalitï¿½ con cui i reports devono essere acquisiti, definire i tempi di una
  visita, escludere IP e maschere di IP, convalidare gli accessi.
 
  Ogni contatore tiene traccia dei visitatori e fornisce completi report statistici, tra cui
@@ -96,7 +96,7 @@
 
  FILE INCLUSI NELLA DISTRIBUZIONE                                                        3
  ------------------------------------------------------------------------------------------
- Decomprimendo l'archivio 'fkounter.zip', verrà ricostruita la seguente struttura di file:
+ Decomprimendo l'archivio 'fkounter.zip', verrï¿½ ricostruita la seguente struttura di file:
 
  [fkounter5]                   (cartella radice)
 
@@ -105,12 +105,12 @@
 
  + [docs]                      (cartella contenente la documentazione)
    - faqs.txt                  (domande e risposte comuni)
-   - history.txt               (cronologia delle versioni, modalità di aggiornamento)
+   - history.txt               (cronologia delle versioni, modalitï¿½ di aggiornamento)
    - license.txt               (licenza per utenti finali e sviluppatori)
    - manual.txt                (la guida all'installazione e alla configurazione)
    - readme.txt                (documento di riferimento iniziale)
 
- + [tool]                      (cartella contenente utilità varie)
+ + [tool]                      (cartella contenente utilitï¿½ varie)
    - db4to5.php                (tool per convertire i contatori dalla versione 4 alla 5)
    - db4to5.txt                (informazioni sull'uso del tool 'db4to5')
 
@@ -118,7 +118,7 @@
  - cnf.inc.php                 (configurazione globale dello script)
  - counter.js.php              (generatore di file JS per visualizzare il contatore)
  - counter.php                 (motore per la rilevazione e l'elaborazione dei dati)
- - dic.inc.php                 (informazioni sulle proprietà che può avere un visitatore)
+ - dic.inc.php                 (informazioni sulle proprietï¿½ che puï¿½ avere un visitatore)
  - lan.inc.php                 (file di testi generici in lingua italiana)
  - mak.inc.php                 (generatore automatico di istanze di contatore)
  - out.inc.php                 (gestore di stampa del contatore)
@@ -126,7 +126,7 @@
  - stats.php                   (visualizzatore di statistiche)
  - sys.inc.php                 (funzioni generiche per la gestione di file)
  - url.inc.php                 (libreria per gestire URL, referrer e motori di ricerca)
- - ver.inc.php                 (definizioni per la compatibilità con PHP versione 4.2.0)
+ - ver.inc.php                 (definizioni per la compatibilitï¿½ con PHP versione 4.2.0)
 
 
 
@@ -139,7 +139,7 @@
 
  INSTALLAZIONE DI UN CONTATORE                                                           4
  ------------------------------------------------------------------------------------------
- Installare un contatore è molto semplice. Esistono, tuttavia, impostazioni avanzate che
+ Installare un contatore ï¿½ molto semplice. Esistono, tuttavia, impostazioni avanzate che
  verranno trattate successivamente. Per ora preoccupiamoci dei concetti di base.
 
  * Nel caso in cui questa fosse la prima istanza di contatore, copiare sul WEB tutti i file
@@ -150,14 +150,14 @@
    nella cartella 'conf/'.
 
  * Modificare in base alle proprie preferenze le sue impostazioni, descritte in dettaglio
-   nel paragrafo 5 (CONFIGURAZIONE DI UN CONTATORE). Queste, tuttavia, sono già configurate
+   nel paragrafo 5 (CONFIGURAZIONE DI UN CONTATORE). Queste, tuttavia, sono giï¿½ configurate
    correttamente e possono essere raffinate in un secondo momento.
 
  * Salvare il file 'conf_example.php' (sempre nella cartella 'conf/') con un altro nome
-   della forma 'config_ID.php', dove ID sarà il suo identificatore.
+   della forma 'config_ID.php', dove ID sarï¿½ il suo identificatore.
 
-   Un ID può essere costituito solamente da caratteri alfanumerici, può avere qualsiasi
-   lunghezza, ed è case-sensitive, ossia "test" e "TesT" identificheranno normalmente due
+   Un ID puï¿½ essere costituito solamente da caratteri alfanumerici, puï¿½ avere qualsiasi
+   lunghezza, ed ï¿½ case-sensitive, ossia "test" e "TesT" identificheranno normalmente due
    diverse istanze di contatore, ma questo dipende dal sistema operativo in uso.
 
    Se, ad esempio, si decide di identificare questo contatore con "test1", allora salvare
@@ -166,7 +166,7 @@
  * Copiare nel WEB, in una cartella chiamata 'conf/' e posta nella cartella radice dello
    script, il file 'conf_test1.php' appena creato (ad es. 'fkounter5/conf/conf_test1.php').
 
- Il contatore è stato creato. Per vederlo in anteprima, navigare con il browser lo scirpt
+ Il contatore ï¿½ stato creato. Per vederlo in anteprima, navigare con il browser lo scirpt
  'counter.php' come segue: 'http://...etcetc.../fkounter5/counter.php?id=test1'.
 
 
@@ -190,7 +190,7 @@
  Memorizza la password per proteggere le statistiche. Tuttavia, per ragioni di sicurezza,
  non dev'essere inserita in chiaro, ma come risultato della funzione "md5".
 
- Per semplicità, se la password scelta è "admin", possiamo scriverla come segue:
+ Per semplicitï¿½, se la password scelta ï¿½ "admin", possiamo scriverla come segue:
 
   $cnf__userpass = md5("admin");
 
@@ -206,44 +206,44 @@
  $cnf__mtime_unique_accs (INTERO)
  =======================
  Definisce un tempo di visita. E' un intervallo di tempo, espresso in minuti, dentro il
- quale un visitatore viene ignorato se visualizza una stessa pagina WEB più di una volta.
+ quale un visitatore viene ignorato se visualizza una stessa pagina WEB piï¿½ di una volta.
  Normalmente 30.
 
  Se non si vogliono distinguere visitatori da visite, impostare questa variabile a 0.
 
- Il valore di questa variabile può essere influenzato da '$cnf__expire_on_midnight'.
- Il significato di questa variabile può essere modificato da '$cnf__count_per_pages'.
+ Il valore di questa variabile puï¿½ essere influenzato da '$cnf__expire_on_midnight'.
+ Il significato di questa variabile puï¿½ essere modificato da '$cnf__count_per_pages'.
 
 
  $cnf__expire_on_midnight (BOOLEANO)
  ========================
- Se questa variabile è impostata a TRUE, il tempo di visita scadrà improrogabilmente alla
+ Se questa variabile ï¿½ impostata a TRUE, il tempo di visita scadrï¿½ improrogabilmente alla
  mezzanotte *solo* se in base alla variabile '$cnf__mtime_unique_accs' si sarebbe protratta
  nel giorno successivo. Normalmente FALSE.
 
 
  $cnf__count_per_pages (BOOLEANO)
  =====================
- Definisce il comportamento del contatore qualora una stessa istanza sia inserita in più
+ Definisce il comportamento del contatore qualora una stessa istanza sia inserita in piï¿½
  pagine del sito.
 
- Se questa variabile è impostata a TRUE, per ogni visitatore, solo l'accesso alla prima
- pagina farà incrementare il contatore e le altre pagine visitate saranno ignorate per
+ Se questa variabile ï¿½ impostata a TRUE, per ogni visitatore, solo l'accesso alla prima
+ pagina farï¿½ incrementare il contatore e le altre pagine visitate saranno ignorate per
  l'intero intervallo di tempo definito in '$cnf__mtime_unique_accs'.
 
- Al contrario, se questa variabile è impostata a FALSE, il contatore incrementerà di una
- unità per ogni pagina WEB visitata nell'intervallo di tempo '$cnf__mtime_unique_accs'.
+ Al contrario, se questa variabile ï¿½ impostata a FALSE, il contatore incrementerï¿½ di una
+ unitï¿½ per ogni pagina WEB visitata nell'intervallo di tempo '$cnf__mtime_unique_accs'.
 
  Normalmente FALSE.
 
 
  $cnf__licit_domains_list (SEQUENZA DI STRINGHE)
  ========================
- Validatore di chiamata. Può memorizzare la sequenza di URLs (paths assoluti e pagine) che
+ Validatore di chiamata. Puï¿½ memorizzare la sequenza di URLs (paths assoluti e pagine) che
  contengono l'istanza di contatore. Se il contatore viene caricato da una locazione che non
- trova riscontro in questa sequenza, non verrà incrementato.
+ trova riscontro in questa sequenza, non verrï¿½ incrementato.
 
- Per disabilitare questa funzione, lasciare la sequenza vuota, ma è sconsigliato.
+ Per disabilitare questa funzione, lasciare la sequenza vuota, ma ï¿½ sconsigliato.
 
  Esempio
  ..........................................................................................
@@ -253,13 +253,13 @@
    "http://www.altrosito.it/path1/pagina.html"
   );
 
-  * la locazione "http://www.miosito.it/path1/MiaPagina.html"             è lecita
-  * la locazione "http://www.miosito.it/path2/MiaPagina.html"         NON è lecita
-  * la locazione "http://www.miosito.it/path1/path2/MiaPagina.html"       è lecita
-  * la locazione "http://www.altrosito.it/path1/pagina.html"              è lecita
-  * la locazione "http://www.altrosito.it/path1/pagina2.html"         NON è lecita
+  * la locazione "http://www.miosito.it/path1/MiaPagina.html"             ï¿½ lecita
+  * la locazione "http://www.miosito.it/path2/MiaPagina.html"         NON ï¿½ lecita
+  * la locazione "http://www.miosito.it/path1/path2/MiaPagina.html"       ï¿½ lecita
+  * la locazione "http://www.altrosito.it/path1/pagina.html"              ï¿½ lecita
+  * la locazione "http://www.altrosito.it/path1/pagina2.html"         NON ï¿½ lecita
 
-  NOTA: il contatore verrà incrementato solo se inserito in una locazione *lecita*.
+  NOTA: il contatore verrï¿½ incrementato solo se inserito in una locazione *lecita*.
  ..........................................................................................
 
  Esempio
@@ -274,17 +274,17 @@
   );
  ..........................................................................................
 
- Ogni URL verrà normalizzato per il confronto, come da paragrafo A3 (NORMALIZZAZIONE DI UN
+ Ogni URL verrï¿½ normalizzato per il confronto, come da paragrafo A3 (NORMALIZZAZIONE DI UN
  URL).
 
 
  $cnf__IPmasks_ignore_list (SEQUENZA DI STRINGHE)
  =========================
- Validatore di chiamata. Può memorizzare una sequenza di IPs e maschere da escludere. Se il
- contatore è invocato per conto di un IP che trova un qualche riscontro in questo array,
- non verrà incrementato.
+ Validatore di chiamata. Puï¿½ memorizzare una sequenza di IPs e maschere da escludere. Se il
+ contatore ï¿½ invocato per conto di un IP che trova un qualche riscontro in questo array,
+ non verrï¿½ incrementato.
 
- Nelle maschere è possibile utilizzare i due caratteri jolly:
+ Nelle maschere ï¿½ possibile utilizzare i due caratteri jolly:
  *   rappresenta un numero compreso tra 0 e 255;
  ?   vale (sempre e solo) una cifra da 0 a 9.
 
@@ -304,8 +304,8 @@
  =======================
  Regola l'ora del server rispetto al tempo locale, aggiungendo o sottraendo ore.
 
- Se, ad esempio, l'ora del server è avanti 2 ore, assegnare alla variabile il valore -2;
- se l'ora del server è indietro di 1 ora, assegnare alla variabile il valore +1.
+ Se, ad esempio, l'ora del server ï¿½ avanti 2 ore, assegnare alla variabile il valore -2;
+ se l'ora del server ï¿½ indietro di 1 ora, assegnare alla variabile il valore +1.
 
 
  $cnf__last_entries (INTERO)
@@ -321,8 +321,8 @@
 
  $cnf__limit_view (INTERO)
  ================
- Imposta il limite massimo di righe per le tabelle con un elevato numero di entrate. Verrà
- poi aggiunta un'ultima riga riepilogativa il cui valore sarà la somma delle righe escluse
+ Imposta il limite massimo di righe per le tabelle con un elevato numero di entrate. Verrï¿½
+ poi aggiunta un'ultima riga riepilogativa il cui valore sarï¿½ la somma delle righe escluse
  nella stampa. Normalmente 15.
 
  Questa variabile ha effetto solamente nella fase di stampa delle statistiche.
@@ -339,7 +339,7 @@
  INSERIMENTO DI UN CONTATORE IN UNA PAGINA WEB                                           6
  ------------------------------------------------------------------------------------------
  Per monitorare gli accessi ad una pagina WEB, che sia posta in qualsiasi locazione in rete
- e che sia scritta in qualsiasi linguaggio (HTML, PHP, etc), è sufficiente includere, da
+ e che sia scritta in qualsiasi linguaggio (HTML, PHP, etc), ï¿½ sufficiente includere, da
  qualche parte nella stessa, il codice JavaScript auto-generato da 'counter.js.php'.
 
  I parametri per lo script 'counter.js.php' sono 2:
@@ -350,13 +350,13 @@
  Esempi
  ..........................................................................................
 
-  <!-- Il seguente esempio visualizza il contatore "test1" in modalità grafica -->
+  <!-- Il seguente esempio visualizza il contatore "test1" in modalitï¿½ grafica -->
   <script 
   type="text/javascript" language="javascript" 
   src="fkounter5/counter.js.php?id=test1"></script>
 
 
-  <!-- Il seguente esempio visualizza il contatore "test1" in modalità testo -->
+  <!-- Il seguente esempio visualizza il contatore "test1" in modalitï¿½ testo -->
   <script 
   type="text/javascript" language="javascript" 
   src="fkounter5/counter.js.php?id=test1&mode=text"></script>
@@ -400,9 +400,9 @@
 
  CREDITI E CONTATTI                                                                      8
  ------------------------------------------------------------------------------------------
- Il fanKounter è stato programmato da *fanatiko*.
+ Il fanKounter ï¿½ stato programmato da *fanatiko*.
  Puoi contattarlo all'indirizzo email: <fankounter@libero.it>.
- Il sito ufficiale del fanKounter è: http://profitterol.altervista.org/fankounter.
+ Il sito ufficiale del fanKounter ï¿½: http://profitterol.altervista.org/fankounter.
 
  RISORSE
  * http://www.php.net ................................ homepage ufficiale del progetto PHP
@@ -429,18 +429,18 @@
 
  Creazione automatica dei contatori
  ==================================
- In alternativa all'installazione manuale di ogni singolo contatore, è possibile attivare
+ In alternativa all'installazione manuale di ogni singolo contatore, ï¿½ possibile attivare
  un meccanismo automatico di istanziamenti. In altre parole, ogni qualvolta occorra
  servirsi di un nuovo contatore, non dovremo far altro che includerlo nella nostra pagina
  WEB, come descritto nel paragrafo 6 (INSERIMENTO DI UN CONTATORE IN UNA PAGINA WEB), senza
- preoccuparci di creare un file di configurazione per esso: questo lavoro lo farà per noi
+ preoccuparci di creare un file di configurazione per esso: questo lavoro lo farï¿½ per noi
  il fanKounter.
 
- Per attivare questa funzionalità occorre aprire con un editor di testi il file di nome
+ Per attivare questa funzionalitï¿½ occorre aprire con un editor di testi il file di nome
  'cnf.inc.php' ed impostare:
 
  * la configurazione default per un contatore in base alle proprie preferenze, sulla quale
-   si baserà la configurazione di ogni nuovo contatore creato;
+   si baserï¿½ la configurazione di ogni nuovo contatore creato;
 
  * la costante 'MAKE_PATHS', che deve contenere un elenco di paths assoluti, separati da
    una virgola, da cui autorizzare richieste di istanziamenti di nuovi contatori.
@@ -450,22 +450,22 @@
 
   define( "MAKE_PATHS" , "http://www.miosito.it,http://www.altrosito.it/path1" );
 
-  * una richiesta da "http://www.miosito.it/MiaPagina.html"               è lecita
-  * una richiesta da "http://www.miosito.it/path/MiaPagina.html"          è lecita
-  * una richiesta da "http://www.altrosito.it/MiaPagina.html"         NON è lecita
-  * una richiesta da "http://www.altrosito.it/path1/MiaPagina.html"       è lecita
-  * una richiesta da "http://www.altrosito.it/path2/MiaPagina.html"   NON è lecita
+  * una richiesta da "http://www.miosito.it/MiaPagina.html"               ï¿½ lecita
+  * una richiesta da "http://www.miosito.it/path/MiaPagina.html"          ï¿½ lecita
+  * una richiesta da "http://www.altrosito.it/MiaPagina.html"         NON ï¿½ lecita
+  * una richiesta da "http://www.altrosito.it/path1/MiaPagina.html"       ï¿½ lecita
+  * una richiesta da "http://www.altrosito.it/path2/MiaPagina.html"   NON ï¿½ lecita
 
-  NOTA: solo per le richieste ritenute *lecite* verrà istanziato un nuovo contatore.
+  NOTA: solo per le richieste ritenute *lecite* verrï¿½ istanziato un nuovo contatore.
  ..........................................................................................
 
- Ogni URL verrà normalizzato per il confronto, come da paragrafo A3 (NORMALIZZAZIONE DI UN
+ Ogni URL verrï¿½ normalizzato per il confronto, come da paragrafo A3 (NORMALIZZAZIONE DI UN
  URL).
 
 
  Programmazione della rilevazione dei reports
  ============================================
- Il fanKounter è molto flessibile dal punto di vista della programmazione della rilevazione
+ Il fanKounter ï¿½ molto flessibile dal punto di vista della programmazione della rilevazione
  dei reports.
 
  Le variabili, proprie di ciascun contatore, che permettono di configurare questo aspetto
@@ -477,30 +477,30 @@
 
  Si rimanda al paragrafo 5 (CONFIGURAZIONE DI UN CONTATORE) per il loro significato.
 
- Quando si inserisce un'istanza di contatore su più pagine WEB, i reports saranno globali,
- ma comunque sarà possibile leggere il numero degli accessi totali che ha avuto ognuna. In
+ Quando si inserisce un'istanza di contatore su piï¿½ pagine WEB, i reports saranno globali,
+ ma comunque sarï¿½ possibile leggere il numero degli accessi totali che ha avuto ognuna. In
  questa ipotesi, supposto che una stessa istanza di contatore sia presente su ogni pagina
  del nostro sito, impostando la variabile '$cnf__count_per_pages' al valore TRUE potremo
- conoscere quali sono le pagine di *accesso* al sito più accreditate e nel frattempo
+ conoscere quali sono le pagine di *accesso* al sito piï¿½ accreditate e nel frattempo
  rilevare gli accessi per visitatore (del sito, vale a dire di almeno una pagina del sito,
  quella di entrata).
 
  Esempio
  ..........................................................................................
 
-  // se questa istanza di contatore è presente in tutte le pagine del nostro sito
+  // se questa istanza di contatore ï¿½ presente in tutte le pagine del nostro sito
   // rileva una sola visita per ogni visitatore del sito nell'arco di mezz'ora
-  // e sapremo quali sono le pagine di accesso al sito più accreditate
+  // e sapremo quali sono le pagine di accesso al sito piï¿½ accreditate
 
   $cnf__mtime_unique_accs  = 30;
   $cnf__expire_on_midnight = FALSE;
   $cnf__count_per_pages    = TRUE;
  ..........................................................................................
 
- Solitamente è consigliabile inserire un'istanza di contatore diversa per ogni pagina WEB,
- così da ottenere reports statistici mirati. Il lavoro è reso estremamente semplice dalla
+ Solitamente ï¿½ consigliabile inserire un'istanza di contatore diversa per ogni pagina WEB,
+ cosï¿½ da ottenere reports statistici mirati. Il lavoro ï¿½ reso estremamente semplice dalla
  funzione di auto-istanziamento, trattato nel paragrafo precedente. In questa ipotesi, la
- variabile '$cnf__count_per_pages' non ha più senso.
+ variabile '$cnf__count_per_pages' non ha piï¿½ senso.
 
  Esempi
  ..........................................................................................
@@ -522,7 +522,7 @@
  ..........................................................................................
 
  Si consiglia di non modificare, col tempo, il metodo di rilevazione per un contatore dopo
- l'installazione, così che le statistiche possano essere sempre coerenti.
+ l'installazione, cosï¿½ che le statistiche possano essere sempre coerenti.
 
 
  Convalidare le chiamate al contatore
@@ -530,12 +530,12 @@
  Questa funzione, attivabile dalla variabile '$cnf__licit_domains_list' a livello di ogni
  singolo contatore, permette di riconoscere chiamate lecite da chiamate falsate.
 
- Prima di decidere se o no attivarla, è bene valutare i pro e i contro.
+ Prima di decidere se o no attivarla, ï¿½ bene valutare i pro e i contro.
 
  * Pro. Non permette, ad esempio, che qualcuno sistemi impropriamente un nostro contatore
    sul suo sito. Le chiamate al contatore da altre locazioni non lo farebbero incrementare.
 
- * Contro. Alcuni browser, come ad esempio Opera, danno la possibilità di disabilitare il
+ * Contro. Alcuni browser, come ad esempio Opera, danno la possibilitï¿½ di disabilitare il
    referrer logging. In base a questa impostazione, un visitatore che accede al nostro sito
    non verrebbe rilevato.
 
@@ -545,10 +545,10 @@
  Per ragioni di sicurezza, la password in un file di configurazione non va inserita in
  chiaro, ma come risultato della funzione "md5".
 
- Così, la password va memorizzata nel modo seguente:
+ Cosï¿½, la password va memorizzata nel modo seguente:
   $cnf__userpass = "21232f297a57a5a743894a0e4a801fc3";
 
- perché ovviamente risulta che:
+ perchï¿½ ovviamente risulta che:
   md5("admin") = 21232f297a57a5a743894a0e4a801fc3
 
  Per impostare una nuova password, sia questa "lucertola", basta creare ed eseguire un
@@ -556,15 +556,15 @@
 
   <?php echo md5("lucertola"); ?>
 
- Il risultato che si otterrà andrà sostituito al valore di '$cnf__userpass'.
+ Il risultato che si otterrï¿½ andrï¿½ sostituito al valore di '$cnf__userpass'.
 
 
  Eliminazione automatica di dati obsoleti
  ========================================
  Il fanKounter elimina periodicamente dal database alcuni dati obsoleti e con pochi hits,
- quali chiavi di ricerca, referrer che forse non esistono più o non linkano più il nostro
+ quali chiavi di ricerca, referrer che forse non esistono piï¿½ o non linkano piï¿½ il nostro
  sito, etc. Tuttavia, i punti di questi non vengono perduti, ma vengono sommati in una
- apposita voce riepilogativa. Così facendo, periodicamente si sfoltisce il database.
+ apposita voce riepilogativa. Cosï¿½ facendo, periodicamente si sfoltisce il database.
 
  Le variabili che programmano questo aspetto, inserite nel file 'cnf.inc.php', sono le
  seguenti:
@@ -575,7 +575,7 @@
 
  Supporto alla multiutenza
  =========================
- Il fanKounter attualmente non prevede la modalità multiutente e tutti i contatori creati
+ Il fanKounter attualmente non prevede la modalitï¿½ multiutente e tutti i contatori creati
  appartengono all'utente che li amministra.
 
  Tuttavia, sono state previste alcune variabili proprie di ogni istanza di contatore che
@@ -601,11 +601,11 @@
  ------------------------------------------------------------------------------------------
  Il fanKounter memorizza i dati statistici di un contatore in un file ben strutturato e
  conforme a PHP. I vantaggi principali che ne conseguono sono due: un file di dati non
- tende a crescere in termini di dimensioni col tempo, ma resta pressoché costante; per
+ tende a crescere in termini di dimensioni col tempo, ma resta pressochï¿½ costante; per
  acquisire i dati non occorrono cicli di lettura e rielaborazioni, ma basta un'inclusione
  nello stile PHP.
 
- La creazione di un file di dati in formato PHP è immune da errori, grazie a degli
+ La creazione di un file di dati in formato PHP ï¿½ immune da errori, grazie a degli
  accorgimenti adottati che vengono riassunti nel seguente algoritmo:
 
   - inizio esecuzione -
@@ -620,17 +620,17 @@
   7 cancella il backup del database
   - fine esecuzione -
 
- Lo script è provvisto di una libreria di funzioni sui file che garantiscono che le
+ Lo script ï¿½ provvisto di una libreria di funzioni sui file che garantiscono che le
  operazioni di copia, cancellazione, etc o si compiano (sicuramente) correttamente o
  provochino l'interruzione immediata dell'esecuzione dell'intero script. In questo modo,
  l'algoritmo precedente diventa sicuro.
 
- Altra caratteristica importante del fanKounter è l'auto controllo che tiene sulla crescita
+ Altra caratteristica importante del fanKounter ï¿½ l'auto controllo che tiene sulla crescita
  delle strutture dati che col tempo possono eccedere in numero di elementi. Si pensi, ad
- esempio, ai referrer: un sito molto popolare può essere linkato da centinaia di altri
- siti. Può capitare, tuttavia, che alcuni di questi abbiano successivamente rimosso il link
- ed i loro hits non abbiano più modo di crescere col tempo, sprofondando tra le ultime
- posizioni *in eterno*. Così, periodicamente il fanKounter rimuove i dati con queste
+ esempio, ai referrer: un sito molto popolare puï¿½ essere linkato da centinaia di altri
+ siti. Puï¿½ capitare, tuttavia, che alcuni di questi abbiano successivamente rimosso il link
+ ed i loro hits non abbiano piï¿½ modo di crescere col tempo, sprofondando tra le ultime
+ posizioni *in eterno*. Cosï¿½, periodicamente il fanKounter rimuove i dati con queste
  caratteristiche e riassume i loro hits in una voce riepilogativa creata per lo scopo.
 
 
@@ -645,11 +645,11 @@
  NORMALIZZAZIONE DI UN URL                                                              A3
  ------------------------------------------------------------------------------------------
  Ogni URL viene normalizzato ad una forma canonica, eliminando inoltre l'informazione
- ritenuta non utile. Così, due URL apparentemente differenti vengono riconosciuti uguali,
+ ritenuta non utile. Cosï¿½, due URL apparentemente differenti vengono riconosciuti uguali,
  mediante confronto stringa a stringa, quando questi rappresentino lo stesso indirizzo WEB.
 
- Nelle variabili di configurazione di un contatore è consigliabile inserire URL in forma
- normalizzata, ma non è obbligatorio. Non tralasciare comunque mai il protocollo "http://".
+ Nelle variabili di configurazione di un contatore ï¿½ consigliabile inserire URL in forma
+ normalizzata, ma non ï¿½ obbligatorio. Non tralasciare comunque mai il protocollo "http://".
 
  Volendo formalizzare, un generico indirizzo WEB rispetta questa sintassi:
 
@@ -662,18 +662,18 @@
 
  dove
 
-  [ELEM]          è un elemento opzionale;
+  [ELEM]          ï¿½ un elemento opzionale;
   (Elem1|Elem2)   vale "Elem1" oppure "Elem2";
-  (Elem)*         è nullo oppure vale "Elem" ripetuto una o più volte.
+  (Elem)*         ï¿½ nullo oppure vale "Elem" ripetuto una o piï¿½ volte.
 
  La normalizzazione di un URL si basa, fondamentalmente, su questi passi:
  * i caratteri maiuscoli di DOMAIN vengono ridotti in minuscolo;
- * se DOMAIN è sia privo di "www." che di un Alias, viene prefissato con "www.";
- * PORT, quando presente, viene eliminato se PortNumber è uguale a "80";
+ * se DOMAIN ï¿½ sia privo di "www." che di un Alias, viene prefissato con "www.";
+ * PORT, quando presente, viene eliminato se PortNumber ï¿½ uguale a "80";
  * tutta la parte PARAMS viene cancellata;
- * FILE viene cancellato se FileName è uguale ad "index";
- * se un PathName è nullo o uguale a ".", "/PathName" viene cancellato;
- * se un PathName è uguale a "..", "/PathName" e "/PathName" genitore vengono cancellati.
+ * FILE viene cancellato se FileName ï¿½ uguale ad "index";
+ * se un PathName ï¿½ nullo o uguale a ".", "/PathName" viene cancellato;
+ * se un PathName ï¿½ uguale a "..", "/PathName" e "/PathName" genitore vengono cancellati.
 
  Esempi
  ..........................................................................................
@@ -693,7 +693,7 @@
  ..........................................................................................
 
  Quando si inserisce un URL nelle variabili di configirazione, quali 'MAKE_PATHS' e
- '$cnf__licit_domains_list', è sufficiente inserire solo una delle forme equivalenti,
+ '$cnf__licit_domains_list', ï¿½ sufficiente inserire solo una delle forme equivalenti,
  possibilmente quella normalizzata.
 
  Esempio
@@ -702,17 +702,17 @@
   // cinque espressioni equivalenti, di cui tutte tranne la prima sono superflue
 
   $cnf__licit_domains_list = array(
-   "http://www.miosito.it/news",                   // questa è ok
-   "http://miosito.it/news",                       // questa è superflua
-   "http://www.miosito.it/news/",                  // questa è superflua
-   "http://www.miosito.it/news/index.php",         // questa è superflua
-   "http://www.miosito.it/news/index.php?page=1"   // questa è superflua
+   "http://www.miosito.it/news",                   // questa ï¿½ ok
+   "http://miosito.it/news",                       // questa ï¿½ superflua
+   "http://www.miosito.it/news/",                  // questa ï¿½ superflua
+   "http://www.miosito.it/news/index.php",         // questa ï¿½ superflua
+   "http://www.miosito.it/news/index.php?page=1"   // questa ï¿½ superflua
   );
  ..........................................................................................
 
- C'è da notare che alcuni siti caricano tutte le pagine avvalendosi di un unico modulo
+ C'ï¿½ da notare che alcuni siti caricano tutte le pagine avvalendosi di un unico modulo
  speciale che fa le veci di loader, utilizzando un parametro di pagina. In questi casi,
- purtroppo, si perderà il riferimento alla pagina, come mostra quest'ultimo esempio di
+ purtroppo, si perderï¿½ il riferimento alla pagina, come mostra quest'ultimo esempio di
  normalizzazione.
 
  Esempio

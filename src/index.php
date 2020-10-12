@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2020 Luca Liscio
+ * Copyright (C) 2020 HZKnight
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -41,7 +41,7 @@
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
  *  @version v 1.0
- *  @copyright Copyright 2020 Luca Liscio 
+ *  @copyright Copyright 2020 HZKnight 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
  *  @package fanKounter

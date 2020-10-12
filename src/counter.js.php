@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2020 Luca Liscio
+ * Copyright (C) 2020 HZKnight
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -40,8 +40,8 @@
  * Modulo che genera codice JavaScript da includere nelle pagine WEB da monitorare.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.0
- *  @copyright Copyright 2017 Luca Liscio
+ *  @version v 5.1
+ *  @copyright Copyright 2020 HZKnight
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -83,9 +83,10 @@ elseif(array_key_exists("HTTP_HOST",$_SERVER)&&array_key_exists("SERVER_PORT",$_
 else
     $aux__script_path=FALSE;
 
-$aux__counter_href=$aux__script_path."counter.php"."?id=".$par__id."&mode=".$par__mode."&referrer='+escape(_referrer)+'";
+$aux__counter_href=$aux__script_path."counter.php"."?id=".$par__id."&mode=".$par__mode."&brname='+platform.name+'&brver='+platform.version+'&os='+platform.os.family+'&osver='+platform.os.version+'&referrer='+escape(_referrer)+'";
 $aux__stats_href=$aux__script_path."stats.php"."?id=".$par__id;
 $aux__jscode=($par__mode==="graphic")?("<a href=\'".$aux__stats_href."\'><img src=\'".$aux__counter_href."\' width=\'98\' height=\'38\' alt=\'fanKounter\' style=\'border:0px;\' /></a>"):("<script type=\'text/javascript\' language=\'javascript\' src=\'".$aux__counter_href."\'></script>");
+$aux__jslib = $aux__script_path."libs/js/platform.js";
 
 ############################################################################################
 # GENERAZIONE DI CODICE JAVASCRIPT
@@ -93,14 +94,17 @@ $aux__jscode=($par__mode==="graphic")?("<a href=\'".$aux__stats_href."\'><img sr
 
 $__jsfile=<<<JSFILE
 /* This file was created by fanKounter */
+
 try
 {
- var _referrer=top.document.referrer;
+ var _referrer=top.document.referrer; 
 }
 catch(_err)
 {
  var _referrer=self.document.referrer;
 }
+
+console.log(platform);
 
 document.write('$aux__jscode');
 JSFILE;
@@ -110,6 +114,9 @@ JSFILE;
 ############################################################################################
 
 header("Content-type: text/javascript");
+
+require_once ('libs/js/platform.js');
+
 echo $__jsfile;
 exit();
 

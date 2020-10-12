@@ -1,5 +1,5 @@
 
-                                        __                      PHP Script    _    vs 5.0
+                                        __       HZKnight free PHP Scripts    _    vs 5.1
                                        / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
                                       | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
                                       |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -17,7 +17,7 @@
      R   Se lo script non riuscisse a creare automaticamente le proprie cartelle di lavoro
          con i permessi di accesso corretti, provare a crearle manualmente ('data/',
          'back/', 'temp/'), attraverso il proprio client FTP, eliminando eventuali cartelle
-         omonime già create.
+         omonime giï¿½ create.
 
      R   Alcuni host WEB mettono a disposizione dei propri utenti cartelle speciali,
          denominate ad esempio 'cgi-bin/' e 'public/', per ospitare script dinamici con
@@ -25,16 +25,16 @@
 
 
 
- Q   Perché nella mia pagina WEB l'immagine del contatore grafico non viene visualizzata?
+ Q   Perchï¿½ nella mia pagina WEB l'immagine del contatore grafico non viene visualizzata?
 
-     R   Se stai caricando un contatore in modalità grafica e ti viene restituito un
-         contatore in modalità testo, probabilmente non è disponibile la libreria GD.
+     R   Se stai caricando un contatore in modalitï¿½ grafica e ti viene restituito un
+         contatore in modalitï¿½ testo, probabilmente non ï¿½ disponibile la libreria GD.
 
      R   Il contatore restituisce un file/immagine e non codice HTML. Nel caso in cui lo
          script sia ospitato su un dominio gratuito che aggiunge codice (HTML, JavaScript)
          per esporre banner e messaggi pubblicitari, il problema molto probabilmente
          potrebbe essere dovuto a questa situazione. Prova ad utilizzare il contatore in
-         modalità solo testo o nascosta.
+         modalitï¿½ solo testo o nascosta.
 
      R   Probabilmente lo script 'counter.js.php' non riesce ad auto-generare la posizione
          del fanKounter. Apri il file 'counter.js.php' ed imposta la seguente variabile:
@@ -43,9 +43,9 @@
 
 
 
- Q   Perché non viene visualizzato nessun output in assenza di messaggi di errore?
+ Q   Perchï¿½ non viene visualizzato nessun output in assenza di messaggi di errore?
 
-     R   L'output di errori e di avvisi è disabilitato. Probabilmente si è verificato un
+     R   L'output di errori e di avvisi ï¿½ disabilitato. Probabilmente si ï¿½ verificato un
          qualche errore nello script, forse localizzato in qualche file di configurazione
          che hai creato o modificato. Ricontrolla questi file.
 
@@ -56,10 +56,10 @@
 
 
 
- Q   Perché il contatore non incrementa il numero degli accessi?
+ Q   Perchï¿½ il contatore non incrementa il numero degli accessi?
 
-     R   Probabilmente ti sta bannando, o per via del tuo IP, o perché non riconosce la
-         giusta locazione, o perché ti ha già conteggiato tra i visitatori. Controlla la
+     R   Probabilmente ti sta bannando, o per via del tuo IP, o perchï¿½ non riconosce la
+         giusta locazione, o perchï¿½ ti ha giï¿½ conteggiato tra i visitatori. Controlla la
          configurazione del contatore.
 
      R   Se il contatore segna ancora zero, probabilmente non stai utilizzando il corretto
@@ -67,7 +67,7 @@
 
 
 
- Q   Perché quando visito i pannelli delle statistiche mi viene richiesta la password?
+ Q   Perchï¿½ quando visito i pannelli delle statistiche mi viene richiesta la password?
 
      R   La password viene memorizzata nel tuo PC, tramite cookie. Abilita i cookies.
 
@@ -75,11 +75,11 @@
 
  Q   Cosa stanno ad indicare i termini "visitatore" e "visita"?
 
-     R   Un visitatore compie le visite al sito, quindi uno stesso visitatore può compiere
-         più visite al sito. Rilevare visitatori anziché visite vuol dire tener conto solo
+     R   Un visitatore compie le visite al sito, quindi uno stesso visitatore puï¿½ compiere
+         piï¿½ visite al sito. Rilevare visitatori anzichï¿½ visite vuol dire tener conto solo
          una volta di un dato visitatore nell'arco di un periodo di tempo (tempo di visita)
          nell'ambito delle statistiche, evitando di falsarle. Il tempo di visita nel
-         fanKounter può essere personalizzato in base alle proprie preferenze.
+         fanKounter puï¿½ essere personalizzato in base alle proprie preferenze.
 
 
 
@@ -92,7 +92,7 @@
 
  Q   Quali sono le caratteristiche dell'immagine originale del contatore?
 
-     R   La codifica è PNG, le dimensioni sono 98 pixel di larghezza e 38 pixel di altezza.
+     R   La codifica ï¿½ PNG, le dimensioni sono 98 pixel di larghezza e 38 pixel di altezza.
 
 
 

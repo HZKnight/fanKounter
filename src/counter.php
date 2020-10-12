@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2020 Luca Liscio
+ * Copyright (C) 2020 HZKnight
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -41,15 +41,13 @@
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
  *  @version v 5.1
- *  @copyright Copyright 2018 Luca Liscio
+ *  @copyright Copyright 2020 HZKnight
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
  *  @package fanKounter
  *  @filesource
  */
-
-//ini_set('memory_limit', '-1');
 
 ############################################################################################
 # INCLUSIONE DELLE LIBRERIE
@@ -102,9 +100,12 @@ _mkdir_(TEMP_FOLDER);
 # PARAMETRI IN INPUT
 ############################################################################################
 
-$par__id=(isset($par__id)&&preg_match("/^[a-z\d]+$/i",$par__id))?$par__id:FALSE;
-$par__mode=(isset($par__mode)&&preg_match("/^(graphic|text|hidden)$/i",$par__mode))?strtolower($par__mode):"graphic";
-$par__referrer=(isset($par__referrer)&&($par__referrer!==""))?$par__referrer:FALSE;
+$par__id=(isset($_GET['id'])&&preg_match("/^[a-z\d]+$/i",$_GET['id']))?$_GET['id']:FALSE;
+$par__mode=(isset($_GET['mode'])&&preg_match("/^(graphic|text|hidden)$/i",$_GET['mode']))?strtolower($_GET['mode']):"graphic";
+$par__brname=(isset($_GET['brname'])&&($_GET['brname']!==""))?$_GET['brname']:FALSE;
+$par__brver=(isset($_GET['brver'])&&($_GET['brver']!==""))?$_GET['brver']:FALSE;
+$par__os=(isset($_GET['os'])&&($_GET['os']!==""))?$_GET['os']:FALSE;
+$par__osver=(isset($_GET['osver'])&&($_GET['osver']!==""))?$_GET['osver']:FALSE;
 
 ############################################################################################
 # ACQUISIZIONE/CREAZIONE DELLA CONFIGURAZIONE DI UN CONTATORE
@@ -220,12 +221,19 @@ if(_licit_ip_())
     $__host=(HOSTNAME&&($aux__ip!==FALSE))?gethostbyaddr($aux__ip):FALSE;
     $__host=($__host!==$aux__ip)?$__host:FALSE;
 
+    //Definisco nome e verisone del browser
+    $__agent = $aux__bcap["Browser"];
+    if($aux__bcap["Browser"]!=$par__brname){
+        $__agent = $par__brname;
+    }
+    $__agent .= " ".$par__brver;
+
     $dat__entry[++$dat__counter]=array();
     $dat__entry[$dat__counter]["ts"]=$aux__now;
     $dat__entry[$dat__counter]["ip"]=$aux__ip;
     $dat__entry[$dat__counter]["host"]=$__host;
-    $dat__entry[$dat__counter]["age"]=$aux__bcap["Parent"]; //_infosys_($aux__agent,$inf__browser);
-    $dat__entry[$dat__counter]["os"]=$aux__bcap["Platform_Description"]; //_infosys_($aux__agent,$inf__os);
+    $dat__entry[$dat__counter]["age"]=$__agent; //_infosys_($aux__agent,$inf__browser);
+    $dat__entry[$dat__counter]["os"]=$par__os." ".$par__osver; //_infosys_($aux__agent,$inf__os);
     $dat__entry[$dat__counter]["loc"]=$aux__location->_normalize_();
 
     if($aux__referrer->_is_engine_()){

@@ -1,5 +1,5 @@
 
-                                        __                      PHP Script    _    vs 5.0
+                                        __       HZKnight free PHP Scripts    _    vs 5.1
                                        / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
                                       | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
                                       |  _| (_| | | | / __ \ (_) | |_| | | | | ||  __/ |
@@ -9,6 +9,6 @@
  license.txt                                  lucliscio <lucliscio@h0model.org>, ITALY
  ******************************************************************************************
 
- Il fanKounter è distribuito sotto la GNU AFERO GENERAL PUBLIC LICENSE v3.
+ Il fanKounter ï¿½ distribuito sotto la GNU AFERO GENERAL PUBLIC LICENSE v3.
 
  Leggere il documento LICENCE.md.
