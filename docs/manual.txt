@@ -400,14 +400,17 @@
 
  CREDITI E CONTATTI                                                                      8
  ------------------------------------------------------------------------------------------
- Il fanKounter � stato programmato da *fanatiko*.
- Puoi contattarlo all'indirizzo email: <fankounter@libero.it>.
- Il sito ufficiale del fanKounter �: http://profitterol.altervista.org/fankounter.
+ Il fanKounter è stato ideato e programmato da *fanatiko*. 
+ Oggi il suo sviluppo è affidato a *lucliscio* che puoi contattare 
+ all'indirizzo email: <lucliscio@h0model.org>.
+ Il sito ufficiale del fanKounter è: https://fankounter.hzknignt.org
 
  RISORSE
- * http://www.php.net ................................ homepage ufficiale del progetto PHP
- * http://www.boutell.com/gd ......................... homepage delle librerie grafiche GD
- * http://www.garykeith.com ....... 'browscap.ini', per il riconoscimento di browser ed OS
+ * https://www.php.net ................................ homepage ufficiale del progetto PHP
+ * https://libgd.github.io ............................ homepage delle librerie grafiche GD
+ * https://www.php.net/manual/en/book.image ........... Uso delle librerie grafiche GD con PHP 
+ * https://browscap.org ............................... 'browscap.ini', per il riconoscimento di browser ed OS
+ * https://github.com/bestiejs/platform.js ............ homepage ufficiale di Platform.js per il riconoscimento di browser ed OS 
 
  SPECIAL THANX TO...
  * Tutti coloro che hanno segnalato problemi e malfunzionamenti o hanno dato suggerimenti.
