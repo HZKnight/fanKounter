@@ -30,6 +30,6 @@ Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - Host server - Sistema operativo e server HTTP: qualunque
 - Utente - Sistema operativo e browser: qualunque
 
-## Ringraziamenti speciali
-### FanatiKo
-Ideatore e sviluppatore originale di fanKounter 
+## Special thanx to... 
+- *fanatiko* ideatore e sviluppatore originale di fanKounter
+- Tutti coloro che segnalano problemi e malfunzionamenti o danno suggerimenti.
