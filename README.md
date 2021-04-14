@@ -1,6 +1,6 @@
 ![#fanKounter](https://fankounter.hzknight.org/assets/images/fankounter2.0.png) 
 
-[![PHP](https://github.com/HZKnight/fanKounter/workflows/fankunter/badge.svg)](https://github.com/HZKnight/fanKounter/actions)
+[![fanKounter](https://github.com/HZKnight/fanKounter/workflows/fanKounter/badge.svg)](https://github.com/HZKnight/fanKounter/actions)
 [![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg)](https://github.com/lucliscio/fanKounter/releases/latest) 
 [![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/5.1-unstable.8)
 ![Licence](https://img.shields.io/github/license/lucliscio/fanKounter.svg)
