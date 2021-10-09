@@ -140,7 +140,7 @@ $aux__ip=(preg_match("/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/",$aux__ip))?$aux__i
 $aux__agent=(array_key_exists("HTTP_USER_AGENT",$_SERVER))?$_SERVER["HTTP_USER_AGENT"]:FALSE;
 $aux__location=new URL((array_key_exists("HTTP_REFERER",$_SERVER))?$_SERVER["HTTP_REFERER"]:FALSE);
 $aux__referrer=new Referrer($par__referrer);
-$aux__calendar=new Calendar;
+$aux__calendar=new Calendar();
 $aux__browscap=new Browscap('./temp/cache/');
 $aux__browscap->doAutoUpdate = false; //Disattiva l'aggiornamento automatico della cache
 $aux__bcap = $aux__browscap->getBrowser(null, true);
@@ -239,7 +239,7 @@ if(_licit_ip_())
     if($aux__referrer->_is_engine_()){
      $dat__entry[$dat__counter]["ref"]=FALSE;
      $dat__entry[$dat__counter]["eng"]=$aux__referrer->_get_engine_name_();
-     $dat__entry[$dat__counter]["enk"]=implode(" ",$aux__referrer->_get_engine_keys_());
+     $dat__entry[$dat__counter]["enk"]=implode(array(" "),$aux__referrer->_get_engine_keys_());
     }
     else{
      $dat__entry[$dat__counter]["ref"]=$aux__referrer->_normalize_();

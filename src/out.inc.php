@@ -61,7 +61,7 @@ if(!defined("STANDALONE"))
 ############################################################################################
 
 define("TOTAL_VAL",$dat__counter);
-define("TODAY_VAL",$aux__calendar->_get_hits_($aux__now,"d"));
+define("TODAY_VAL",$aux__calendar->_get_hits_($aux__now, array("d")));
 
 ############################################################################################
 # NESSUNA CACHE

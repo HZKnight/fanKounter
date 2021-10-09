@@ -191,6 +191,7 @@ $menus = array();
 settype($mcontrol,"integer");
 $mcontrol = 0;
 foreach(array(_strlan_(LAN_MENU1,TRUE)=>0,_strlan_(LAN_MENU2,TRUE)=>1,_strlan_(LAN_MENU3,TRUE)=>2,_strlan_(LAN_MENU4,TRUE)=>3,_strlan_(LAN_MENU5,TRUE)=>4,_strlan_(LAN_MENU6,TRUE)=>5) as $__name=>$__panel){
+    $menus[$mcontrol] = new stdClass();
     $menus[$mcontrol]->id = $par__id;
     $menus[$mcontrol]->panel = $__panel;
     $menus[$mcontrol]->tab_header = ($par__panel===$__panel)?("<input type=\"submit\" value=\"".$__name."\" class=\"menu_hi\" />"):("<input type=\"submit\" value=\"".$__name."\" onmouseover=\"javascript:this.className=&quot;menu_up&quot;;\" onmouseout=\"javascript:this.className=&quot;menu&quot;;\" class=\"menu\" />");
@@ -506,7 +507,7 @@ function _strdate_($__timestamp,$__type="d"){
  $__months=explode(",",LAN_MONTHS,12);
  $__days=explode(",",LAN_DAYS,7);
 
- switch(strtolower($__type{0})){
+ switch(strtolower($__type[0])){
   case "w":
    return $__days[(6+date("w",$__timestamp))%7];
   case "m":
@@ -522,7 +523,7 @@ function _tsoffset_($__offset,$__type="d"){
 
  global $aux__now;
 
- switch(strtolower($__type{0})){
+ switch(strtolower($__type[0])){
   case "y":
    return mktime(12,0,0,1,1,date("Y",$aux__now)+$__offset);
   case "m":
@@ -644,7 +645,7 @@ function _graph_($__data,$__type,$__title,$__header1,$__header2,$__header3,$__co
    elseif($__item==="#!")
     $__stritem="<span class=\"other\">"._strlan_(LAN_OTHER,TRUE)."</span>";
    else{
-    switch(strtolower($__type{0})){
+    switch(strtolower($__type[0])){
      case "u":
       $__address=_strlan_(urldecode($__item),TRUE);
       $__stritem="<a href=\"".$__address."\" title=\"".$__address."\">"._strcut_($__address,$__strcut)."</a>";
