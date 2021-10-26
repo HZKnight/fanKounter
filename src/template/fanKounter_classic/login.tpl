@@ -35,7 +35,7 @@
  						</form>
  					</div>
  					<p class="credits">
-						&copy;2020 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
+						&copy;2021 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
 						<br/><a href="{$homepage}">fanKounter</a> a HZKnight Free PHP Script
 					</p>
  					<script type="text/javascript" language="javascript">
