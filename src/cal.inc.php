@@ -139,19 +139,19 @@ class Calendar {
     settype($__date,"integer");
 
     if(array_key_exists($__year,$this->__year))
-    switch(strtolower($__type[0])){
-      case "d":
-        if(array_key_exists($__month-1,$this->__year[$__year]))
-          if(array_key_exists($__date-1,$this->__year[$__year][$__month-1]))
-            return $this->__year[$__year][$__month-1][$__date-1];
-        break;
-      case "m":
-        if(array_key_exists($__month-1,$this->__year[$__year]))
-          return array_sum($this->__year[$__year][$__month-1]);
-        break;
-      case "y":
-        return array_sum(array_map("array_sum",$this->__year[$__year]));
-    }
+      switch(strtolower($__type[0])){
+        case "d":
+          if(array_key_exists($__month-1,$this->__year[$__year]))
+            if(array_key_exists($__date-1,$this->__year[$__year][$__month-1]))
+              return $this->__year[$__year][$__month-1][$__date-1];
+          break;
+        case "m":
+          if(array_key_exists($__month-1,$this->__year[$__year]))
+            return array_sum($this->__year[$__year][$__month-1]);
+          break;
+        case "y":
+          return array_sum(array_map("array_sum",$this->__year[$__year]));
+      }
 
     return 0;
   }
