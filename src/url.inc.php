@@ -55,8 +55,9 @@
 
 class URL{
  var $__url_v;
-
- function URL($__url){
+ 
+ // Ex URL
+ public function __construct($__url){
   settype($__url,"string");
 
   $__url_v=array("prot"=>"","host"=>"","port"=>"","path"=>"","page"=>"","para"=>"");
@@ -150,7 +151,8 @@ class Referrer extends URL{
  var $__engine_name;
  var $__engine_keys_v;
 
- function Referrer($__url){
+ // Ex Referrer
+ public function __construct($__url){
   settype($__url,"string");
 
   global $inf__engine,$inf__keyban;
