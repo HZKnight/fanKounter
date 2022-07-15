@@ -106,7 +106,7 @@
     $par__brver=(isset($_GET['brver'])&&($_GET['brver']!==""))?$_GET['brver']:FALSE;
     $par__os=(isset($_GET['os'])&&($_GET['os']!==""))?$_GET['os']:FALSE;
     $par__osver=(isset($_GET['osver'])&&($_GET['osver']!==""))?$_GET['osver']:FALSE;
-    $par__referrer=(isset(S_GET['referrer'])&&($_GET['referrer']!==""))?$_GET['referrer']:FALSE;
+    $par__referrer=(isset($_GET['referrer'])&&($_GET['referrer']!==""))?$_GET['referrer']:FALSE;
 
 ############################################################################################
 # ACQUISIZIONE/CREAZIONE DELLA CONFIGURAZIONE DI UN CONTATORE
