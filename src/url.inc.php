@@ -56,8 +56,12 @@
 class URL{
  var $__url_v;
  
- // Ex URL
- public function __construct($__url){
+  // Ex URL
+  public function __construct($__url){
+    $this->URL($__url);
+  }
+ 
+ public function URL($__url){
   settype($__url,"string");
 
   $__url_v=array("prot"=>"","host"=>"","port"=>"","path"=>"","page"=>"","para"=>"");
@@ -66,7 +70,7 @@ class URL{
    $__url=urldecode($__url);
   while(preg_match("/%[a-f\d]{2}/i",$__url));
 
-  $__url=(get_magic_quotes_gpc())?stripslashes($__url):$__url;
+  $__url=stripslashes($__url);
   $__url=preg_replace("/[\\x00-\x1F]/","",$__url);
   $__url=preg_replace("/\\x5C/","/",$__url);
   $__url=trim($__url);
