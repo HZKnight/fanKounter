@@ -117,7 +117,7 @@ define("FLOCK_FILES", "lock_*.tmp");
 
 define("HOMEPAGE", "https://fankounter.hzknight.org/");
 define("EMAIL", "lucliscio@h0model.org");
-define("VERSION", "5.1.0-unstable.8");
+define("VERSION", "5.1.0-rc.1");
 
 ############################################################################################
 # CONFIGURAZIONE DEFAULT PER UN CONTATORE
