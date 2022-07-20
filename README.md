@@ -29,7 +29,7 @@ fanKounter è uno script in *php* gratuito, distribuito sotto licenza GNU AGPL, 
 ## Requisiti
 Il fanKounter non ha bisogno di requisiti HW/SW specifici.
 - *php*: >= 7.* 
-	- **N.B.**: Testato fino a *php* 8.1 
+	- **N.B.**: Testato fino a *php 8.1* 
 - Libreria GD come estensione al *php*: opzionale, o versione 2.0 e successive
 - Host server - Sistema operativo e server HTTP: qualunque
 - Utente - Sistema operativo e browser: qualunque
