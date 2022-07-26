@@ -49,8 +49,8 @@
                 </tr>
             </table>
             <p class="credits">
-                &copy;2021 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
-                <br/><a href="{$homepage}">fanKounter</a> a HZKnight Free PHP Script
+                <a href="{$homepage}">fanKounter</a> a HZKnight Free PHP Script<br/>
+                &copy;2022 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
             </p>
         </div>
     </body>

@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C) 2021  HZKnight
+ * Copyright (C)2022 HZKnight
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -41,7 +41,7 @@
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
  *  @version v 5.1
- *  @copyright Copyright 2021  HZKnight
+ *  @copyright Copyright 2022 HZKnight
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
