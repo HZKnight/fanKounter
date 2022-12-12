@@ -1,4 +1,4 @@
-![#fanKounter](https://fankounter.hzknight.org/assets/images/fankounter2.0.png) 
+![#fanKounter](https://brend.h0model.org/software/fankounter/fankounter3.0.png) 
 
 [![fanKounter](https://github.com/HZKnight/fanKounter/workflows/fanKounter/badge.svg)](https://github.com/HZKnight/fanKounter/actions)
 [![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg)](https://github.com/lucliscio/fanKounter/releases/latest) 
