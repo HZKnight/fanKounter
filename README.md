@@ -1,4 +1,4 @@
-![#fasnKounter](https://fankounter.hzknight.org/assets/images/fankounter2.0.png)
+![#fasnKounter](https://brend.h0model.org/software/fankounter/fankounter3.0.png)
 
 [![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg)](https://github.com/lucliscio/fanKounter/releases/latest) 
 [![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/v5.1.0-rc.1)
