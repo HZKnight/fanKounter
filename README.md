@@ -2,7 +2,7 @@
 
 [![fanKounter](https://github.com/HZKnight/fanKounter/workflows/fanKounter/badge.svg)](https://github.com/HZKnight/fanKounter/actions)
 [![Release](https://img.shields.io/github/release/lucliscio/fanKounter.svg)](https://github.com/lucliscio/fanKounter/releases/latest) 
-[![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/v5.1.0-rc.1)
+[![Pre-release](https://img.shields.io/github/tag-pre/lucliscio/fankounter.svg?label=pre-release)](https://github.com/lucliscio/fanKounter/releases/tag/v5.1.0-rc.2)
 ![Licence](https://img.shields.io/github/license/lucliscio/fanKounter.svg)
 ![Issue](https://img.shields.io/github/issues/lucliscio/fanKounter.svg)
 [![Code Climate](https://codeclimate.com/github/lucliscio/fanKounter/badges/gpa.svg)](https://codeclimate.com/github/lucliscio/fanKounter)
