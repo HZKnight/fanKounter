@@ -48,8 +48,8 @@
      *  @filesource
      */
 
-    use phpbrowscap\Browscap;
     require_once 'libs/Browscap.php';
+    use phpbrowscap\Browscap;
     
     ini_set('memory_limit', '-1');
 
