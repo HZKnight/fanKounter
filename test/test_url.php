@@ -6,5 +6,6 @@
     $out = new Referrer($url);
 
     echo "Server: ".$_SERVER['SERVER_SOFTWARE']."<br/><br/><pre>";
-    echo var_dump($out);
-    echo "</pre>";
+    var_dump($out);
+    var_dump($_SERVER);
+    echo "</pre>"; 
