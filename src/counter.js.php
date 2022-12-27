@@ -40,7 +40,7 @@
  * Modulo che genera codice JavaScript da includere nelle pagine WEB da monitorare.
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.1
+ *  @version v 5.2.1
  *  @copyright Copyright 2022 HZKnight
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
@@ -83,7 +83,7 @@ elseif(array_key_exists("HTTP_HOST",$_SERVER)&&array_key_exists("SERVER_PORT",$_
 else
     $aux__script_path=FALSE;
 
-$aux__counter_href=$aux__script_path."counter.php"."?id=".$par__id."&mode=".$par__mode."&brname='+platform.name+'&brver='+platform.version+'&os='+platform.os.family+'&osver='+platform.os.version+'&referrer='+escape(_referrer)+'";
+$aux__counter_href=$aux__script_path."counter.php"."?id=".$par__id."&mode=".$par__mode."&brname='+platform.name+'&brver='+platform.version+'&os='+platform.os.name+'&osver='+platform.os.version+'&referrer='+escape(_referrer)+'";
 $aux__stats_href=$aux__script_path."stats.php"."?id=".$par__id;
 $aux__jscode=($par__mode==="graphic")?("<a href=\'".$aux__stats_href."\'><img src=\'".$aux__counter_href."\' width=\'98\' height=\'38\' alt=\'fanKounter\' style=\'border:0px;\' /></a>"):("<script type=\'text/javascript\' language=\'javascript\' src=\'".$aux__counter_href."\'></script>");
 $aux__jslib = $aux__script_path."libs/js/platform.js";
@@ -104,6 +104,16 @@ catch(_err)
  var _referrer=self.document.referrer;
 }
 
+var parser = new UAParser();
+var data = parser.getResult();
+console.log(data);
+
+var platform = {
+    "name": data['browser']['name'],
+    "version": data['browser']['version'],
+    "os": data["os"]
+}
+
 console.log(platform);
 
 document.write('$aux__jscode');
@@ -115,7 +125,7 @@ JSFILE;
 
 header("Content-type: text/javascript");
 
-require_once ('libs/js/platform.js');
+require_once ('libs/js/ua-parser.js');
 
 echo $__jsfile;
 exit();
